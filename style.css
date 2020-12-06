@@ -1,0 +1,520 @@
+/***** GENERELT / RESET *****/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/***** FONT *****/
+h1 {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: 1.5em;
+    color: lightgrey;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.17em;
+    color: #0f5dff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.17em;
+    color: #0f5dff;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.8em;
+    color: rgb(64, 64, 64);
+    margin-bottom: 20px;
+}
+
+/***** LINKS *****/
+
+.single-project-links a:link {
+    display: block;
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: lightgrey;
+    /*    text-transform: uppercase;*/
+    text-decoration: none;
+}
+
+.single-project-links a:visited {
+    color: lightgrey;
+}
+
+.single-project-links a:hover {
+    /*    text-decoration: underline;*/
+    color: black;
+}
+
+.single-project-links a:active {
+    color: black;
+}
+
+
+/***** HEADER *****/
+header {
+    height: 100px;
+}
+
+/***** FOOTER *****/
+footer {
+    padding: 10px;
+    text-align: center;
+
+
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: black;
+    text-transform: uppercase;
+}
+
+/**** LOGO *****/
+#logo {
+    float: left;
+    width: 40vw;
+    height: 100px;
+}
+
+/***** NAVIGATION *****/
+nav {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    /*    z-index: 1;*/
+    /*    position: sticky;*/
+    top: 0;
+}
+
+nav ul {
+    background-color: white;
+    text-align: center;
+    padding: 0px;
+    z-index: 1;
+    position: relative;
+}
+
+nav li {
+    display: inline;
+    background-color: white;
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: black;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    color: black;
+    /*    text-transform: uppercase;*/
+}
+
+li a:hover {
+    background-color: none;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+#menuknap {
+    display: inline-block;
+    position: fixed;
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    /*    z-index: 1;*/
+    position: relative;
+    float: right;
+}
+
+#menu {
+    list-style-type: none;
+    height: 100vh;
+}
+
+/***** SECTION / PORTFOLIO OVERSIGT *****/
+/***** TITEL HOVEREFFEKT *****/
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: grid;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    /*
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ffffff;
+*/
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: black;
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/***** TITEL HOVEREFFEKT LINK *****/
+.container-link {
+    /*    position: absolute;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/***** PORTFOLIO ENKELT PROJEKT *****/
+.project img {
+    margin-bottom: 30px;
+}
+
+.project-text {
+    margin: 0 auto;
+}
+
+
+/***** PORTFOLIO ENKELT PROJEKT LINKS *****/
+/***** LINKS *****/
+.project-links {
+    margin: 0 auto;
+    position: relative;
+    width: 80vw;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.project-links a:link {
+    display: block;
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: lightgrey;
+    /*    text-transform: uppercase;*/
+    text-decoration: none;
+}
+
+.project-links a:visited {
+    color: lightgrey;
+}
+
+.project-links a:hover {
+    /*    text-decoration: underline;*/
+    color: black;
+}
+
+.project-links a:active {
+    color: black;
+}
+
+/***** CV *****/
+#cv article + h1 {
+    margin-top: 50px;
+}
+
+/***** KONTAKT *****/
+#contact img {
+    margin-bottom: 50px;
+}
+
+#contact a:link {
+    font-family: roc-grotesk,
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+}
+
+#contact a:visited {
+    color: lightgrey;
+}
+
+#contact a:hover,
+#contact a:active {
+    /*    text-decoration: underline;*/
+    color: lightgray;
+}
+
+.contact-some {
+    margin-top: 50px;
+}
+
+.contact-some img {
+    margin-bottom: 50px;
+    width: 10vw;
+    transform: translateY(-4px);
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** MEDIA QUERY DESKTOP *****/
+
+@media (min-width: 600px) {
+
+    body {
+        padding: 30px;
+    }
+
+    header {
+        height: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    #logo {
+        width: 30vw;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    #menuknap {
+        display: none;
+    }
+
+    .hidden {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #menu {
+        height: auto;
+        padding-right: 20px;
+        /*        margin-top: 30px;*/
+        margin-right: 40px;
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #menu li a {
+        font-size: 1.5em;
+        /*        padding: 30px 20px;*/
+    }
+
+    nav {
+        width: auto;
+        /*        position: absolute;*/
+        margin-right: 20px;
+    }
+
+    nav ul {
+        overflow: hidden;
+        top: 0;
+        float: right;
+    }
+
+    .menu-container {
+        height: 0;
+        text-align: center;
+    }
+
+    #portfolio {
+        margin-left: 30px;
+        margin-right: 30px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #portfolio .container {
+        width: 40vw;
+        margin: 20px;
+    }
+
+    #portfolio .container img {
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    #cv,
+    #contact {
+        margin: 30px;
+    }
+
+    #contact h1 {
+        font-size: 1.5em;
+    }
+
+    .contact-some {
+        margin-top: 30px;
+    }
+
+    .contact-some img {
+        width: 3vw;
+    }
+
+
+    /***** PORTFOLIO OVERSIGT HOVER EFFEKT *****/
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #ffffff;
+    }
+
+    .container:hover .overlay {
+        opacity: 1;
+    }
+
+    .text {
+        color: black;
+        font-family: roc-grotesk,
+            sans-serif;
+        font-weight: 400;
+        font-size: 1.5em;
+        text-align: center;
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    /***** TITEL HOVEREFFEKT LINK *****/
+    .container-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    /***** PROJEKT *****/
+    .project .container img {
+        width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
