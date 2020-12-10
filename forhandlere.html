@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forhandlere</title>
+    <link rel="stylesheet" href="">
+</head>
+
+
+<body>
+
+    <main>
+        <section id="forhandlere">
+            <p></p>
+        </section>
+    </main>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM loaded');
+        });
+
+        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/17";
+
+        document.addEventListener("DOMContentLoaded", hentData);
+
+        async function hentData() {
+            const respons = await fetch(link);
+            forhandlere = await respons.json();
+            vis(forhandlere);
+            console.log('DataHentet')
+        }
+
+        function vis(forhandlere) {
+            console.log(forhandlere)
+            document.querySelector("#forhandlere").innerHTML = forhandlere.content.rendered;
+
+        }
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

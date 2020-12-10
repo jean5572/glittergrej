@@ -34,20 +34,37 @@
     </header>
 
     <!-- SECTION PORTFOLIO -->
-    <section id="portfolio">
-        <a href="projekter/dtiys-04.html">
-            <article class="container">
-                <span class="container-link"></span><img src="indhold/dtiys/03-dtiys-vivi-sophiemcpike.png" alt="Projekt" class="image">
-                <div class="overlay">
-                    <div class="text">DTIYS 04</div>
-                </div>
-            </article>
-        </a>
+    <section id="forside">
+
     </section>
 
     <!-- FOOTER -->
     <footer>© Vivi Mortensen 2020</footer>
 
     <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
-</body></html>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM loaded');
+        });
+
+        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/9";
+
+        document.addEventListener("DOMContentLoaded", hentData);
+
+        async function hentData() {
+            const respons = await fetch(link);
+            forside = await respons.json();
+            vis(forside);
+            console.log('DataHentet')
+        }
+
+        function vis(forside) {
+            console.log(forside)
+            document.querySelector("#forside").innerHTML = forside.content.rendered;
+
+        }
+
+    </script>
+</body>
+
+</html>
