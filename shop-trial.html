@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<style>
+    .valgt {
+        color: #e68609;
+        text-decoration: line-through;
+
+    }
+
+</style>
+
+<body>
+    <section class="whole">
+        <div class="filtre">
+            <button class="filter valgt" data-køn="alle">Alle Produkter</button>
+            <button class="filter" data-køn="4">Illustrationer</button>
+            <button class="filter" data-køn="5">Nøgleringe</button>
+            <button class="filter" data-køn="6">Jul</button>
+            <button class="filter" data-køn="7">Andet</button>
+            <!--            <button class="filter" data-køn="">Udsalg</button>-->
+        </div>
+
+        <!--        HVORFOR SKAL DER VÆRE CONTAINER!?    MARTIN???  -->
+        <section id="container"></section>
+
+        <template class="destination-template">
+            <article id="grid-article">
+                <h1 class="produktnavn"></h1>
+                <img src="" alt="" class="produktbillede1">
+                <p class="produktpris"></p>
+            </article>
+        </template>
+    </section>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM loaded');
+        hentData();
+    });
+
+    let filter = "alle";
+    let destinationer;
+    let container = document.querySelector("#container");
+    let temp = document.querySelector("template");
+
+
+
+    const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/produkter?per_page=100"
+
+    document.addEventListener("DOMContentLoaded", hentData);
+
+
+    async function hentData() {
+        const respons = await fetch(link);
+        destinationer = await respons.json();
+        addEventListenersToButtons();
+        vis(destinationer);
+    }
+
+    function vis(destinationer) {
+        //Løber igennem array "destinationer" fra JSON
+        container.innerHTML = "";
+        destinationer.forEach(dest => {
+            if (filter == "alle" || filter == dest.categories) {
+                console.log(dest);
+                const klon = temp.cloneNode(true).content;
+                klon.querySelector(".produktnavn").textContent = dest.produktnavn;
+                klon.querySelector(".produktbillede1").src = dest.produktbillede_1.guid;
+                klon.querySelector(".produktpris").textContent = dest.produktpris + " kr.";
+
+                container.appendChild(klon);
+
+            }
+
+        })
+    }
+
+    function addEventListenersToButtons() {
+        document.querySelectorAll(".filter").forEach((btn) => {
+            btn.addEventListener("click", filterBTNs);
+        });
+    }
+
+    function filterBTNs() {
+        filter = this.dataset.køn;
+        document.querySelectorAll(".filter").forEach((btn) => {
+            btn.classList.remove("valgt");
+        });
+
+        this.classList.add("valgt");
+        vis(destinationer);
+    }
+
+</script>
+
+</html>
