@@ -6,43 +6,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GLITTERGREJ</title>
 
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" type="image/png" sizes="16x16" href="">
 </head>
 
+<style>
+    /***** FORSIDE GALLERI/SPLASH MOBIL *****/
+    /* Container needed to position the button. Adjust the width as needed */
+    #forside-galleri {
+        position: relative;
+        width: 100vw;
+    }
+
+    /* Make the image responsive */
+    #forside-galleri img {
+        height: auto;
+    }
+
+    /* Style the button and place it in the middle of the container/image */
+    #forside-galleri .forside-knap {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #FCEAF0;
+        color: #FF48AA;
+        font-size: 1em;
+        padding: 10px 30px;
+        padding: 10%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+    }
+
+    /* HOVER TIL DESKTOP */
+    /*
+    #forside-galleri .forside-knap:hover {
+    background-color: #FDFDFD;
+    }
+*/
+
+    .forside-pil-venstre {
+        width: 10%;
+        position: absolute;
+        top: 45%;
+        left: 1%;
+
+    }
+
+    .forside-pil-hoejre {
+        width: 10%;
+        position: absolute;
+        top: 45%;
+        right: 1%;
+    }
+
+    .forside-galleri-circles {
+        position: absolute;
+        top: 90%;
+        left: 45%;
+        margin-top: 10px;
+    }
+
+    .forside-galleri-circles .aktiv {
+        height: 10px;
+        width: 10px;
+        border: 1px solid #FDFDFD;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .forside-galleri-circles .inaktiv {
+        height: 10px;
+        width: 10px;
+        background-color: #FDFDFD;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    #instagram-feed {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #instagram-feed div {
+        flex-grow: 1;
+        width: 33%;
+        height: 100px;
+    }
+
+</style>
+
+
 <body>
 
     <!-- HEADER MED LOGO OG NAVIGATION -->
 
     <header>
-
+        <img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
         <div id="menuknap">☰</div>
         <div class="menu-container">
-            <div id="logo"><a href="index.html"><img src="img/logo.svg" alt="logo">
+            <div id="logo"><a href="index.html"><img src="img/glittergrej-logo.jpg" alt="Glittergrej logo">
                 </a>
             </div>
         </div>
 
         <nav>
             <ul id="menu" class="hidden">
-                <li><a href="index.html">Portfolio</a></li>
-                <li><a href="cv.html">CV</a></li>
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="shop-trial.html">Shop</a></li>
+                <li><a href="om-glittergrej.html">Om Glittergrej</a>
+                    <a href="om-glittergrej.html">- Events</a>
+                    <a href="om-glittergrej.html">- Forhandlere</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+
+                <div id="searchbar">
+                    <input type="text" placeholder="Søg..." name="search">
+                    <img src="img/searchbar-icon.png" alt="Søgebar ikon">
+                </div>
+
+                <div id="social-media">
+                    <img src="img/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
+                    <img src="img/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
+                </div>
             </ul>
         </nav>
     </header>
 
-    <!-- SECTION PORTFOLIO -->
+    <!-- SECTION FORSIDE -->
     <section id="forside">
 
+        <div id="forside-galleri">
+            <img src="img/gg-golden-pussy1.jpeg" alt="">
+            <button class="forside-knap">Shop Glittergrej</button>
+            <img class="forside-pil-venstre" src="img/arrow-left.png" alt="forside-galleri-venstre-pil">
+            <img class="forside-pil-hoejre" src="img/arrow-right.png" alt="forside-galleri-hoejre-pil">
+            <div class="forside-galleri-circles">
+                <div class="aktiv"></div>
+                <div class="inaktiv"></div>
+                <div class="inaktiv"></div>
+            </div>
+        </div>
+
+        <!-- PUT GLITTER PÅ LIVET -->
+        <div id="glitter-paa">
+            <h1></h1>
+            <p></p>
+        </div>
+
+        <!-- GLITTERNYT -->
+        <div id="glitter-nyt">
+            <h2></h2>
+            <img src="" alt="">
+            <h3></h3>
+        </div>
+
+        <!-- INSTAGRAM -->
+        <h2></h2>
+        <p></p>
+        <div id="instagram-feed">
+            <div class=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+            <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+            <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+        </div>
+
+
+        <!-- PIL TIL TOP -->
     </section>
 
     <!-- FOOTER -->
-    <footer>© Vivi Mortensen 2020</footer>
 
     <!-- JAVASCRIPT -->
     <script>
@@ -50,6 +198,34 @@
             console.log('DOM loaded');
         });
 
+        //BURGERMENU
+        window.addEventListener("load", sidenvises);
+
+
+        function sidenvises() {
+            console.log("sidenvises");
+
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu)
+        }
+
+        function toggleMenu() {
+            console.log("toggleMenu");
+
+            document.querySelector("#menu").classList.toggle("hidden");
+
+            let erskjult = document.querySelector("#menu").classList.contains("hidden");
+
+            if (erskjult == true) {
+
+                document.querySelector("#menuknap").textContent = "☰";
+
+            } else {
+                document.querySelector("#menuknap").textContent = "x";
+            }
+
+        }
+
+        //HENT INDHOLD
         const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/9";
 
         document.addEventListener("DOMContentLoaded", hentData);
@@ -63,7 +239,9 @@
 
         function vis(forside) {
             console.log(forside)
-            document.querySelector("#forside").innerHTML = forside.content.rendered;
+            //document.querySelector("#forside").innerHTML = forside.content.rendered;
+            document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
+            document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
 
         }
 

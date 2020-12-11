@@ -11,7 +11,8 @@ html {
 body {
     width: 100vw;
     margin: 0 auto;
-    padding: 20px;
+    background-color: #FDFDFD;
+    /*    padding: 20px;*/
 }
 
 img {
@@ -74,15 +75,11 @@ p {
 
 /***** LINKS *****/
 
+/*
 .single-project-links a:link {
     display: block;
-    font-family: roc-grotesk,
-        sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1em;
     color: lightgrey;
-    /*    text-transform: uppercase;*/
+        text-transform: uppercase;
     text-decoration: none;
 }
 
@@ -91,40 +88,42 @@ p {
 }
 
 .single-project-links a:hover {
-    /*    text-decoration: underline;*/
+        text-decoration: underline;
     color: black;
 }
 
 .single-project-links a:active {
     color: black;
 }
+*/
 
 
 /***** HEADER *****/
 header {
-    height: 100px;
+    height: 150px;
+    background-color: #FCEAF0;
 }
 
 /***** FOOTER *****/
+/*
 footer {
     padding: 10px;
     text-align: center;
 
 
-    font-family: roc-grotesk,
+    font-family: 'Jost',
         sans-serif;
     font-weight: 400;
-    font-style: normal;
     font-size: 1em;
     color: black;
     text-transform: uppercase;
 }
+*/
 
 /**** LOGO *****/
 #logo {
-    float: left;
-    width: 40vw;
-    height: 100px;
+    width: 20vw;
+    margin-left: 30px;
 }
 
 /***** NAVIGATION *****/
@@ -132,14 +131,13 @@ nav {
     margin: 0;
     overflow: hidden;
     width: 100%;
-    /*    z-index: 1;*/
-    /*    position: sticky;*/
+    z-index: 1;
+    position: sticky;
     top: 0;
 }
 
 nav ul {
-    background-color: white;
-    text-align: center;
+    text-align: left;
     padding: 0px;
     z-index: 1;
     position: relative;
@@ -147,26 +145,24 @@ nav ul {
 
 nav li {
     display: inline;
-    background-color: white;
-    text-align: center;
+    text-align: left;
 }
 
 li a {
     display: block;
     color: black;
-    padding: 14px 36px;
+    padding: 14px 30px;
     text-decoration: none;
-    font-family: roc-grotesk,
+    font-family: 'Jost',
         sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2em;
-    color: black;
-    /*    text-transform: uppercase;*/
-}
-
-li a:hover {
-    background-color: none;
+    color: #FF48AA;
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 0.1em;
+    background-color: #FCEAF0;
 }
 
 .hidden {
@@ -177,11 +173,10 @@ li a:hover {
 #menuknap {
     display: inline-block;
     position: fixed;
-    font-family: roc-grotesk,
+    font-family: 'Jost',
         sans-serif;
     font-weight: 400;
-    font-style: normal;
-    font-size: 2em;
+    font-size: 5em;
     /*    z-index: 1;*/
     position: relative;
     float: right;
@@ -190,160 +185,51 @@ li a:hover {
 #menu {
     list-style-type: none;
     height: 100vh;
+    /*    background-color: #FCEAF0;*/
 }
 
-/***** SECTION / PORTFOLIO OVERSIGT *****/
-/***** TITEL HOVEREFFEKT *****/
-.image {
-    display: block;
+.menu-container {
+    display: flex;
+    align-items: center
+}
+
+/*** SHOPPING CART IKON ***/
+#shopping-cart {
+    width: 10%;
+    float: right
+}
+
+
+/*** SØGEBAR ***/
+#searchbar {
     width: 100%;
-    height: auto;
+    margin-left: 30px;
 }
 
-.container {
-    position: relative;
-    width: 80vw;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    display: grid;
+#searchbar input {
+    color: #CCCCCC;
+    padding: 10px;
+    width: 70%;
+    border-radius: 10px;
+    border: none;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    /*
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #ffffff;
-*/
+#searchbar img {
+    width: 8%;
 }
 
-.container:hover .overlay {
-    opacity: 1;
+/*** SOCIALE MEDIER IKONER ***/
+#social-media {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 30px;
 }
 
-.text {
-    color: black;
-    font-family: roc-grotesk,
-        sans-serif;
-    font-weight: 400;
-    font-size: 1.5em;
-    text-align: center;
-    text-transform: uppercase;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+#social-media img {
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-/***** TITEL HOVEREFFEKT LINK *****/
-.container-link {
-    /*    position: absolute;*/
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/***** PORTFOLIO ENKELT PROJEKT *****/
-.project img {
-    margin-bottom: 30px;
-}
-
-.project-text {
-    margin: 0 auto;
-}
-
-
-/***** PORTFOLIO ENKELT PROJEKT LINKS *****/
-/***** LINKS *****/
-.project-links {
-    margin: 0 auto;
-    position: relative;
-    width: 80vw;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-
-.project-links a:link {
-    display: block;
-    font-family: roc-grotesk,
-        sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1em;
-    color: lightgrey;
-    /*    text-transform: uppercase;*/
-    text-decoration: none;
-}
-
-.project-links a:visited {
-    color: lightgrey;
-}
-
-.project-links a:hover {
-    /*    text-decoration: underline;*/
-    color: black;
-}
-
-.project-links a:active {
-    color: black;
-}
-
-/***** CV *****/
-#cv article + h1 {
-    margin-top: 50px;
-}
-
-/***** KONTAKT *****/
-#contact img {
-    margin-bottom: 50px;
-}
-
-#contact a:link {
-    font-family: roc-grotesk,
-        sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1em;
-    color: black;
-    text-decoration: none;
-}
-
-#contact a:visited {
-    color: lightgrey;
-}
-
-#contact a:hover,
-#contact a:active {
-    /*    text-decoration: underline;*/
-    color: lightgray;
-}
-
-.contact-some {
-    margin-top: 50px;
-}
-
-.contact-some img {
-    margin-bottom: 50px;
-    width: 10vw;
-    transform: translateY(-4px);
-    transition: 0.3s;
-}
-
-
-
-
 
 
 
