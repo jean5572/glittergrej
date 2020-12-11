@@ -61,6 +61,7 @@
             background-color: #fceaf0;
             padding: 20px;
         }
+
     </style>
 </head>
 
@@ -68,9 +69,8 @@
 <body>
 
     <main>
-        <section id="kontakt">
-            <p></p>
-        </section>
+        <h1></h1>
+        <section id="kontakt"></section>
 
         <!-- KONTAKTFORMULAR -->
         <div class="container">
@@ -118,12 +118,16 @@
         function vis(kontakt) {
             console.log(kontakt)
             document.querySelector("#kontakt").innerHTML = kontakt.content.rendered;
+            document.querySelector("h1").textContent = kontakt.title.rendered;
 
         }
+
     </script>
 
 
 
 
 
-</body></html>
+</body>
+
+</html>

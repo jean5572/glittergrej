@@ -26,9 +26,8 @@
 <body>
 
     <main>
-        <section id="forhandlere">
-            <p></p>
-        </section>
+        <h1></h1>
+        <section id="forhandlere"></section>
     </main>
 
     <script>
@@ -50,6 +49,7 @@
         function vis(forhandlere) {
             console.log(forhandlere)
             document.querySelector("#forhandlere").innerHTML = forhandlere.content.rendered;
+            document.querySelector("h1").textContent = forhandlere.title.rendered;
 
         }
 
