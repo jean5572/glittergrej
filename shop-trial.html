@@ -19,11 +19,11 @@
 <body>
     <section class="whole">
         <div class="filtre">
-            <button class="filter valgt" data-køn="alle">Alle Produkter</button>
-            <button class="filter" data-køn="4">Illustrationer</button>
-            <button class="filter" data-køn="5">Nøgleringe</button>
-            <button class="filter" data-køn="6">Jul</button>
-            <button class="filter" data-køn="7">Andet</button>
+            <button class="filter valgt" data-item="alle">Alle Produkter</button>
+            <button class="filter" data-item="4">Illustrationer</button>
+            <button class="filter" data-item="5">Nøgleringe</button>
+            <button class="filter" data-item="6">Jul</button>
+            <button class="filter" data-item="7">Andet</button>
             <!--            <button class="filter" data-køn="">Udsalg</button>-->
         </div>
 
@@ -46,7 +46,7 @@
     });
 
     let filter = "alle";
-    let destinationer;
+    let produkter;
     let container = document.querySelector("#container");
     let temp = document.querySelector("template");
 
@@ -59,21 +59,21 @@
 
     async function hentData() {
         const respons = await fetch(link);
-        destinationer = await respons.json();
+        produkter = await respons.json();
         addEventListenersToButtons();
-        vis(destinationer);
+        vis(produkter);
     }
 
-    function vis(destinationer) {
+    function vis(produkter) {
         //Løber igennem array "destinationer" fra JSON
         container.innerHTML = "";
-        destinationer.forEach(dest => {
-            if (filter == "alle" || filter == dest.categories) {
-                console.log(dest);
+        produkter.forEach(produkt => {
+            if (filter == "alle" || filter == produkt.categories) {
+                console.log(produkt);
                 const klon = temp.cloneNode(true).content;
-                klon.querySelector(".produktnavn").textContent = dest.produktnavn;
-                klon.querySelector(".produktbillede1").src = dest.produktbillede_1.guid;
-                klon.querySelector(".produktpris").textContent = dest.produktpris + " kr.";
+                klon.querySelector(".produktnavn").textContent = produkt.produktnavn;
+                klon.querySelector(".produktbillede1").src = produkt.produktbillede_1.guid;
+                klon.querySelector(".produktpris").textContent = produkt.produktpris + " kr.";
 
                 container.appendChild(klon);
 
@@ -89,13 +89,13 @@
     }
 
     function filterBTNs() {
-        filter = this.dataset.køn;
+        filter = this.dataset.item;
         document.querySelectorAll(".filter").forEach((btn) => {
             btn.classList.remove("valgt");
         });
 
         this.classList.add("valgt");
-        vis(destinationer);
+        vis(produkter);
     }
 
 </script>
