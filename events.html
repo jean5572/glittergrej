@@ -35,8 +35,8 @@
 <body>
 
     <main>
-        <section id="events">
-            <p></p>
+        <h1></h1>
+        <section id="events-information">
         </section>
     </main>
 
@@ -58,7 +58,8 @@
 
         function vis(events) {
             console.log(events)
-            document.querySelector("#events").innerHTML = events.content.rendered;
+            document.querySelector("#events-information").innerHTML = events.content.rendered;
+            document.querySelector("h1").textContent = events.title.rendered;
 
         }
     </script>
