@@ -4,16 +4,39 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forhandlere</title>
+    <title>Events</title>
     <link rel="stylesheet" href="">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
 
+    <style>
+        body {
+            background-color: #fdfdfd;
+            font-family: 'Jost', sans-serif;
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #ff48aa;
+        }
+
+        .wp-block-button__link {
+            color: #ff48aa;
+            background-color: #fceaf0;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+
+</head>
 
 <body>
 
     <main>
-        <section id="events">
-            <p></p>
+        <h1></h1>
+        <section id="events-information">
         </section>
     </main>
 
@@ -35,16 +58,14 @@
 
         function vis(events) {
             console.log(events)
-            document.querySelector("#events").innerHTML = events.content.rendered;
+            document.querySelector("#events-information").innerHTML = events.content.rendered;
+            document.querySelector("h1").textContent = events.title.rendered;
 
         }
-
     </script>
 
 
 
 
 
-</body>
-
-</html>
+</body></html>

@@ -6,15 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forhandlere</title>
     <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            background-color: #fdfdfd;
+            font-family: 'Jost', sans-serif;
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #ff48aa;
+        }
+
+    </style>
 </head>
 
 
 <body>
 
     <main>
-        <section id="forhandlere">
-            <p></p>
-        </section>
+        <h1></h1>
+        <section id="forhandlere"></section>
     </main>
 
     <script>
@@ -36,6 +49,7 @@
         function vis(forhandlere) {
             console.log(forhandlere)
             document.querySelector("#forhandlere").innerHTML = forhandlere.content.rendered;
+            document.querySelector("h1").textContent = forhandlere.title.rendered;
 
         }
 

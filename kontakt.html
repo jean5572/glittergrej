@@ -6,15 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forhandlere</title>
     <link rel="stylesheet" href="">
+    <style>
+        body {
+            background-color: #fdfdfd;
+            font-family: 'Jost', sans-serif;
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #ff48aa;
+        }
+
+        /*KONTAKTFORMULAR*/
+        /* styling af tekst og tekstfelter */
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 1px;
+            color: #ccc;
+            background-color: #fdfdfd;
+        }
+
+        /* styling af knap */
+        input[type=submit] {
+            background-color: #ff48aa;
+            color: #fdfdfd;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Jost', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* styling af mouse over */
+        input[type=submit]:hover {
+            background-color: #fdfdfd;
+            color: #ff48aa;
+        }
+
+        /* styling af containeren */
+        .container {
+            border-radius: 5px;
+            background-color: #fceaf0;
+            padding: 20px;
+        }
+
+    </style>
 </head>
 
 
 <body>
 
     <main>
-        <section id="kontakt">
-            <p></p>
-        </section>
+        <h1></h1>
+        <section id="kontakt"></section>
+
+        <!-- KONTAKTFORMULAR -->
+        <div class="container">
+            <form>
+
+                <label for="fname">Navn *</label>
+                <input type="text" id="fname" name="firstname" placeholder="Dit navn..">
+
+                <label for="lname">Email *</label>
+                <input type="text" id="lname" name="lastname" placeholder="Din email..">
+
+                <label for="country">Ordrenummer *</label>
+                <input type="text" id="lname" name="lastname" placeholder="Dit ordrenummer..">
+
+                <label for="country">Emne *</label>
+                <input type="text" id="lname" name="lastname" placeholder="Dit emne..">
+
+
+                <label for="subject">Besked *</label>
+                <textarea id="subject" name="subject" placeholder="Din besked.." style="height:200px"></textarea>
+
+                <input type="submit" value="SEND">
+
+            </form>
+        </div>
+
     </main>
 
     <script>
@@ -36,6 +118,7 @@
         function vis(kontakt) {
             console.log(kontakt)
             document.querySelector("#kontakt").innerHTML = kontakt.content.rendered;
+            document.querySelector("h1").textContent = kontakt.title.rendered;
 
         }
 
