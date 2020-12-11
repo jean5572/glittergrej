@@ -9,25 +9,198 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="">
 
     <link rel="icon" type="image/png" sizes="16x16" href="">
 </head>
 
 <style>
+    /***** GENERELT / RESET *****/
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        width: 100vw;
+        margin: 0 auto;
+        background-color: #FDFDFD;
+        /*    padding: 20px;*/
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        vertical-align: middle;
+    }
+
+    h1 {
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2em;
+    }
+
+    h2 {
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-size: 1.17em;
+    }
+
+    h4 {
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-size: 1.17em;
+    }
+
+    p {
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-size: 1em;
+        line-height: 1.8em;
+    }
+
+    /***** HEADER *****/
+    header {
+        height: 150px;
+        background-color: #FCEAF0;
+    }
+
+    #header-ikoner {
+        display: flex;
+        float: right;
+        justify-content: right;
+        margin-right: 30px;
+    }
+
+    /*** SHOPPING CART IKON ***/
+    #shopping-cart {
+        float: right
+    }
+
+    /**** LOGO *****/
+    #logo {
+        width: 50%;
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+
+    /***** NAVIGATION *****/
+    nav {
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        z-index: 1;
+        position: sticky;
+        top: 0;
+    }
+
+    nav ul {
+        text-align: left;
+        padding: 0px;
+        z-index: 1;
+        position: relative;
+    }
+
+    nav li {
+        display: inline;
+        text-align: left;
+    }
+
+    li a {
+        display: block;
+        color: black;
+        padding: 14px 30px;
+        text-decoration: none;
+        font-family: 'Jost',
+            sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2em;
+        color: #FF48AA;
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 0.1em;
+        background-color: #FCEAF0;
+    }
+
+    .hidden {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    #menuknap {
+        display: inline-block;
+        position: fixed;
+        font-family: 'Jost',
+            sans-serif;
+        font-weight: 400;
+        font-size: 5em;
+        /*    z-index: 1;*/
+        position: relative;
+        float: right;
+    }
+
+    #menu {
+        list-style-type: none;
+        height: 200vh;
+        background-color: #FCEAF0;
+        padding-top: 50px;
+    }
+
+    .menu-container {
+        display: flex;
+        align-items: center
+    }
+
+    /*** SØGEBAR ***/
+    #searchbar {
+        width: 100%;
+        margin: 50px 30px 30px 30px;
+    }
+
+    #searchbar input {
+        color: #CCCCCC;
+        padding: 10px;
+        width: 70%;
+        border-radius: 10px;
+        border: none;
+    }
+
+    #searchbar img {
+        width: 8%;
+    }
+
+    /*** SOCIALE MEDIER IKONER ***/
+    #social-media {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 30px;
+    }
+
+    #social-media img {
+        width: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /***** FORSIDE GALLERI/SPLASH MOBIL *****/
-    /* Container needed to position the button. Adjust the width as needed */
     #forside-galleri {
         position: relative;
         width: 100vw;
     }
 
-    /* Make the image responsive */
-    #forside-galleri img {
-        height: auto;
-    }
-
-    /* Style the button and place it in the middle of the container/image */
     #forside-galleri .forside-knap {
         position: absolute;
         top: 80%;
@@ -100,16 +273,17 @@
         display: inline-block;
     }
 
-    #instagram-feed {
-        display: flex;
-        flex-wrap: wrap;
+    #pil-til-top {
+        position: relative;
+        float: right;
+        margin: 0 30px 50px 0;
     }
 
-    #instagram-feed div {
-        flex-grow: 1;
-        width: 33%;
-        height: 100px;
+    /*
+    #pil-til-top img {
+    width: 20%;
     }
+*/
 
 </style>
 
@@ -119,10 +293,11 @@
     <!-- HEADER MED LOGO OG NAVIGATION -->
 
     <header>
-        <img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
-        <div id="menuknap">☰</div>
+        <div id="header-ikoner"><img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
+            <div id="menuknap">☰</div>
+        </div>
         <div class="menu-container">
-            <div id="logo"><a href="index.html"><img src="img/glittergrej-logo.jpg" alt="Glittergrej logo">
+            <div id="logo"><a href="index.html"><img src="img/glittergrej-logo.png" alt="Glittergrej logo">
                 </a>
             </div>
         </div>
@@ -152,17 +327,25 @@
     <!-- SECTION FORSIDE -->
     <section id="forside">
 
+
         <div id="forside-galleri">
-            <img src="img/gg-golden-pussy1.jpeg" alt="">
+            <img src="slideshow_img/img1.jpeg" alt="Forside galleri billede 1">
+
             <button class="forside-knap">Shop Glittergrej</button>
-            <img class="forside-pil-venstre" src="img/arrow-left.png" alt="forside-galleri-venstre-pil">
-            <img class="forside-pil-hoejre" src="img/arrow-right.png" alt="forside-galleri-hoejre-pil">
+
+            <button><img class="forside-pil-venstre" src="img/arrow-left.png" alt="forside-galleri-venstre-pil"></button>
+
+            <button id="startOver">Videre<img class="forside-pil-hoejre" src="img/arrow-right.png" alt="forside-galleri-hoejre-pil"></button>
+
+
             <div class="forside-galleri-circles">
                 <div class="aktiv"></div>
                 <div class="inaktiv"></div>
                 <div class="inaktiv"></div>
             </div>
         </div>
+
+
 
         <!-- PUT GLITTER PÅ LIVET -->
         <div id="glitter-paa">
@@ -174,7 +357,6 @@
         <div id="glitter-nyt">
             <h2></h2>
             <img src="" alt="">
-            <h3></h3>
         </div>
 
         <!-- INSTAGRAM -->
@@ -188,6 +370,9 @@
 
 
         <!-- PIL TIL TOP -->
+        <div id="pil-til-top">
+            <a href="index.html#forside"><img src="img/arrow-to-top.png" alt="Glittergrej pil til toppen af siden"></a>
+        </div>
     </section>
 
     <!-- FOOTER -->
@@ -240,9 +425,50 @@
         function vis(forside) {
             console.log(forside)
             //document.querySelector("#forside").innerHTML = forside.content.rendered;
-            document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
+            //document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
             document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
 
+        }
+
+        //FORSIDE GALLERI
+        //Opret tæller
+        let number = 0;
+
+        const forfra = document.querySelector("button");
+
+        //Find billede
+        const image = document.querySelector("img");
+
+        //Opret array
+        let slideshowImages = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+
+        //Klik på knap for at skifte til næste billede
+        const button = document.querySelector("button");
+        button.addEventListener("click", nextImage);
+
+        //Funktion til at skifte til næste billedet
+        function nextImage() {
+
+            //Hvis navnet på billedet er mindre end billede array, så skal billedet skifte
+            if (number < 8) {
+
+                //Tæl op
+                number++;
+
+                console.log(slideshowImages[number]);
+
+                image.src = "slideshow_img/" + slideshowImages[number];
+
+
+                if (number == 7) {
+                    const forfra = document.querySelector("#startOver");
+                    forfra.textContent = "Forfra";
+                    number = -1;
+                }
+
+            } else {
+                forfra.textContent = "videre";
+            }
         }
 
     </script>
