@@ -4,8 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forhandlere</title>
+    <title>Om Glittergrej</title>
     <link rel="stylesheet" href="">
+    <style>
+        body {
+            background-color: #fdfdfd;
+            font-family: 'Jost', sans-serif;
+            padding: 20px;
+            letter-spacing: 1px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
 </head>
 
 
@@ -13,6 +27,7 @@
 
     <main>
         <section id="om">
+            <h1></h1>
             <p></p>
         </section>
     </main>
@@ -36,15 +51,13 @@
         function vis(om) {
             console.log(om)
             document.querySelector("#om").innerHTML = om.content.rendered;
+            document.querySelector("h1").textContent = om.title.rendered;
 
         }
-
     </script>
 
 
 
 
 
-</body>
-
-</html>
+</body></html>
