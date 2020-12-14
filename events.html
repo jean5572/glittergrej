@@ -5,15 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
 
     <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
         body {
             background-color: #fdfdfd;
             font-family: 'Jost', sans-serif;
-            padding: 20px;
+            /*            padding: 20px;*/
             letter-spacing: 1px;
         }
 
@@ -27,6 +33,47 @@
             padding: 5px;
             border-radius: 5px;
         }
+
+        .img-kort,
+        .img-logo {
+            width: 3rem;
+        }
+
+        footer {
+            background-color: #FCEAF0;
+        }
+
+        .sectionwrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col1 {
+            flex-basis: 100px;
+            flex-grow: 1;
+        }
+
+        .sectionwrapper2 {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            flex: 300px;
+            flex-grow: 1;
+        }
+
+        .col2 {
+            flex-basis: 300px;
+            flex-grow: 1;
+        }
+
+        a {
+            color: black;
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 
 
@@ -36,9 +83,42 @@
 
     <main>
         <h1></h1>
-        <section id="events-information">
-        </section>
+        <section id="events-information"></section>
     </main>
+
+    <footer>
+        <div class="sectionwrapper">
+            <div class="col1">
+                <a href="#">Handelsbetingelser</a>
+                <a href="#">Cookies og privatlivspolitik</a>
+                <p>
+                    @Glittergrej 2020 <br>
+                    CVR: 40044167
+                </p>
+                <p>Betalingsmetoder:</p>
+                <img src="img/logo/Visa-Logo.png" alt="visa-logo" class="img-kort">
+                <img src="img/logo/mastercard-vector-logo.png" alt="mastercard-logo" class="img-kort">
+            </div>
+
+            <div class="sectionwrapper2">
+                <div class="col1 col2">
+                    <a href="#">
+                        <img src="img/logo/glittergrej-mail-icon.png" alt="glittergrej-mail" class="img-logo">
+                    </a>
+                    <a href="#">kys@glittergrej.dk</a>
+                </div>
+                <div class="col1 col2">
+                    <a href="#">
+                        <img src="img/logo/glittergrej-facebook-icon.png" alt="glittergrej-facebook" class="img-logo">
+                    </a>
+                    <a href="#">
+                        <img src="img/logo/glittergrej-instagram-icon.png" alt="glittergrej-instagram" class="img-logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -62,10 +142,13 @@
             document.querySelector("h1").textContent = events.title.rendered;
 
         }
+
     </script>
 
 
 
 
 
-</body></html>
+</body>
+
+</html>
