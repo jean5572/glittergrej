@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Star Spil</title>
+    <link rel="stylesheet" href="">
+
+    <style>
+        /* SPIL ELEMENTER */
+
+        #star_container1,
+        #star_container2,
+        #star_container3 {
+            position: absolute;
+        }
+
+        #star_sprite1 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star1.svg);
+            background-size: cover;
+        }
+
+        #star_sprite2 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star2.svg);
+            background-size: cover;
+        }
+
+        #star_sprite3 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star3.svg);
+            background-size: cover;
+        }
+
+        /*
+        #star_sprite4 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star4.svg);
+            background-size: cover;
+        }
+
+        #star_sprite5 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star5.svg);
+            background-size: cover;
+        }
+
+        #star_sprite6 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star6.svg);
+            background-size: cover;
+        }
+
+        #star_sprite7 {
+            width: 12vw;
+            height: 22vh;
+            background-image: url(img/animation/star3.svg);
+            background-size: cover;
+        }
+*/
+
+
+        /* POSITIONER */
+
+        .position1 {
+            top: -10vw;
+            left: 45vw;
+        }
+
+        .position2 {
+            top: -10vw;
+            left: 65vw;
+        }
+
+        .position3 {
+            top: -10vw;
+            left: 35vw;
+        }
+
+        .position4 {
+            top: -10vw;
+            left: 55vw;
+        }
+
+        .position5 {
+            top: -10vw;
+            left: 25vw;
+        }
+
+        .delay1 {
+            animation-delay: 0s;
+        }
+
+        .delay2 {
+            animation-delay: 2.4s;
+        }
+
+        .delay3 {
+            animation-delay: 1.5s;
+        }
+
+        .delay4 {
+            animation-delay: 0.7s;
+        }
+
+        .delay5 {
+            animation-delay: 3.2s;
+        }
+
+        /*************************************************
+
+
+
+        /* ANIMATIONER */
+
+        /* Stjerner falder */
+        .falling {
+            animation-name: falling_kf;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes falling_kf {
+            from {
+                top: -10vw;
+            }
+
+            to {
+                top: 60vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game_elements">
+
+        <!-- SPIL ELEMENTER -->
+        <div id="star_container1">
+            <div id="star_sprite1"></div>
+        </div>
+
+        <div id="star_container2">
+            <div id="star_sprite2"></div>
+        </div>
+
+        <div id="star_container3">
+            <div id="star_sprite3"></div>
+        </div>
+
+        <!--
+        <div id="star_container4">
+            <div id="star_sprite4"></div>
+        </div>
+
+        <div id="star_container5">
+            <div id="star_sprite5"></div>
+        </div>
+
+        <div id="star_container6">
+            <div id="star_sprite6"></div>
+        </div>
+
+        <div id="star_container7">
+            <div id="star_sprite7"></div>
+        </div>
+-->
+
+
+        <script>
+            //GENERELT
+
+            //VARIABLER
+
+            //Spillet sÃ¦ttes i gang, nÃ¥r siden er loadet
+            window.addEventListener("load", sidenVises);
+
+            function sidenVises() {
+                console.log("sidenVises");
+                showStart();
+            }
+
+            //Vis startskÃ¦rm
+            function showStart() {
+                console.log("showStart");
+                //document.querySelector("#start").classList.remove("hide");
+
+
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container1").classList.add("position" + myRandom);
+                document.querySelector("#star_container1").classList.add("falling");
+                document.querySelector("#star_container1").classList.add("delay1");
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container2").classList.add("position" + myRandom);
+                document.querySelector("#star_container2").classList.add("falling");
+                document.querySelector("#star_container2").classList.add("delay2");
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container3").classList.add("position" + myRandom);
+                document.querySelector("#star_container3").classList.add("falling");
+                document.querySelector("#star_container3").classList.add("delay3");
+
+
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container4").classList.add("position" + myRandom);
+                document.querySelector("#star_container4").classList.add("falling");
+                document.querySelector("#star_container4").classList.add("delay4");
+
+
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container5").classList.add("position" + myRandom);
+                document.querySelector("#star_container5").classList.add("falling");
+                document.querySelector("#star_container5").classList.add("delay5");
+
+
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container6").classList.add("position" + myRandom);
+                document.querySelector("#star_container6").classList.add("falling");
+                document.querySelector("#star_container6").classList.add("delay1");
+
+
+                myRandom = Math.floor((Math.random() * 5) + 1);
+                document.querySelector("#star_container7").classList.add("position" + myRandom);
+                document.querySelector("#star_container7").classList.add("falling");
+                document.querySelector("#star_container7").classList.add("delay2");
+
+            }
+        </script>
+
+</body></html>
