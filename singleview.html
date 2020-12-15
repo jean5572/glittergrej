@@ -8,16 +8,124 @@
     <link rel="stylesheet" href="">
 </head>
 
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
+</style>
+
 <body>
+
+
     <section id="singleview">
+        <!--   DEV ED     -->
+
+        <!--  W3SCHOOL  -->
         <article>
+            <!--      containeren for billedegalleri      -->
             <section id="singleview-parent">
-                <section id="singleview-img">
-                    <img src="" alt="" class="billede1">
-                    <img src="" alt="" class="billede2">
-                    <img src="" alt="" class="billede3">
-                    <img src="" alt="" class="billede4">
-                </section>
+                <!--     billeder      -->
+                <div class="mySlides">
+                    <img src="" alt="" id="billede1">
+                </div>
+                <div class="mySlides">
+                    <img src="" alt="" id="billede2">
+                </div>
+                <div class="mySlides">
+                    <img src="" alt="" id="billede3">
+                </div>
+                <div class="mySlides">
+                    <img src="" alt="" id="billede4">
+                </div>
+
+                <!--   Næste/tidligere knapper   -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!--       thumbnail images         -->
+                <div class="row">
+                    <div class="column">
+                        <img src="" onclick="currentSlide(1)" alt="" id="billede1" class="demo cursor">
+                    </div>
+                    <div class="column">
+                        <img src="" onclick="currentSlide(2)" alt="" id="billede2" class="demo cursor">
+                    </div>
+                    <div class="column">
+                        <img src="" onclick="currentSlide(3)" alt="" id="billede3" class="demo cursor">
+                    </div>
+                    <div class="column">
+                        <img src="" onclick="currentSlide(4)" alt="" id="billede4" class="demo cursor">
+                    </div>
+
+
+                </div>
+
             </section>
 
             <section id="singleview-paragraph">
@@ -38,7 +146,7 @@
     </section>
 
     <section id="more">
-        <h2></h2>
+        <h2>MÅSKE KAN DU OGSÅ LIDE</h2>
         <img src="" alt="">
     </section>
 
@@ -63,10 +171,10 @@
 
             if (id == produkter.id) {
                 console.log(produkter);
-                document.querySelector(".billede1").src = produkter.produktbillede_1.guid;
-                document.querySelector(".billede2").src = produkter.produktbillede_2.guid;
-                document.querySelector(".billede3").src = produkter.produktbillede_3.guid;
-                document.querySelector(".billede4").src = produkter.produktbillede_4.guid;
+                document.querySelector("#billede1").src = produkter.produktbillede_1.guid;
+                document.querySelector("#billede2").src = produkter.produktbillede_2.guid;
+                document.querySelector("#billede3").src = produkter.produktbillede_3.guid;
+                document.querySelector("#billede4").src = produkter.produktbillede_4.guid;
 
 
 
@@ -76,6 +184,42 @@
 
             }
 
+        }
+
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
         }
 
     </script>

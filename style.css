@@ -390,6 +390,13 @@ li a {
     }
 
     /***** TITEL HOVEREFFEKT LINK *****/
+    #more img {
+        width: 15%;
+    }
+
+
+
+    /***** TITEL HOVEREFFEKT LINK *****/
     .container-link {
         position: absolute;
         width: 100%;
