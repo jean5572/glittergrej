@@ -286,6 +286,88 @@
     }
 */
 
+    /***** MEDIA QUERY DESKTOP *****/
+
+    @media (min-width: 600px) {
+
+        /* HEADER */
+        header {
+            height: 180px;
+        }
+
+        /* MENU */
+        #logo {
+            width: 15%;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
+        #menuknap {
+            display: none;
+        }
+
+        .hidden {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #menu li {
+            display: inline-block;
+        }
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #FCEAF0;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-left: 30px;
+        }
+
+        .dropdown-content a {
+            color: #FF48AA;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+
+            font-family: 'Jost',
+                sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 0.1em;
+            background-color: #FCEAF0;
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #FF48AA;
+            color: #FCEAF0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover {
+            background-color: #FF48AA;
+            color: #FCEAF0;
+        }
+
+
+
+    }
+
 </style>
 
 
@@ -307,9 +389,15 @@
             <ul id="menu" class="hidden">
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="shop-trial.html">Shop</a></li>
-                <li><a href="om-glittergrej.html">Om Glittergrej</a>
-                    <a href="events.html">- Events</a>
-                    <a href="forhandlere.html">- Forhandlere</a></li>
+
+                <div class="dropdown">
+                    <li><a href="om-glittergrej.html">Om Glittergrej</a></li>
+                    <div class="dropdown-content">
+                        <a href="events.html">Events</a>
+                        <a href="forhandlere.html">Forhandlere</a>
+                    </div>
+                </div>
+
                 <li><a href="kontakt.html">Kontakt</a></li>
 
                 <div id="searchbar">
