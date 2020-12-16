@@ -110,21 +110,37 @@ header {
 }
 
 /***** FOOTER *****/
-/*
-footer {
-    padding: 10px;
-/*    text-align: center;*/
-
-
-font-family: 'Jost',
-sans-serif;
-font-weight: 400;
-font-size: 1em;
-color: black;
-text-transform: uppercase;
+.img-kort,
+.img-logo {
+    width: 3rem;
 }
 
-*/
+footer {
+    background-color: #FCEAF0;
+}
+
+.sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col1 {
+    flex-basis: 100px;
+    flex-grow: 1;
+}
+
+.sectionwrapper2 {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex: 300px;
+    flex-grow: 1;
+}
+
+.col2 {
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
 
 /**** LOGO *****/
 #logo {
