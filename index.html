@@ -93,9 +93,9 @@
 
     /**** LOGO *****/
     #logo {
-        width: 50%;
+        width: 35%;
         margin-left: 30px;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     /***** NAVIGATION *****/
@@ -286,6 +286,68 @@
     }
 */
 
+
+
+    #menu li a {
+        font-size: 1.25em;
+    }
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #FCEAF0;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-left: 30px;
+    }
+
+    .dropdown-content a {
+        color: #FF48AA;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+
+        font-family: 'Jost',
+            sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.25em;
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 0.1em;
+        background-color: #FCEAF0;
+
+    }
+
+    .dropdown-content a:hover {
+        background-color: #FF48AA;
+        color: #FCEAF0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover {
+        background-color: #FF48AA;
+        color: #FCEAF0;
+    }
+
+
+
+
+
+
+
+
     /***** MEDIA QUERY DESKTOP *****/
 
     @media (min-width: 600px) {
@@ -297,9 +359,19 @@
 
         /* MENU */
         #logo {
-            width: 15%;
+            width: 12%;
             margin-left: 30px;
-            margin-top: 10px;
+            margin-top: 20px;
+        }
+
+        #social-media-container {
+            display: none;
+        }
+
+        #menu {
+            position: absolute;
+            top: 15px;
+            left: 220px;
         }
 
         #menuknap {
@@ -313,6 +385,10 @@
 
         #menu li {
             display: inline-block;
+        }
+
+        #menu li a {
+            font-size: 1.25em;
         }
 
 
@@ -342,7 +418,7 @@
                 sans-serif;
             font-weight: 400;
             font-style: normal;
-            font-size: 2em;
+            font-size: 1.25em;
             text-transform: uppercase;
             text-align: left;
             letter-spacing: 0.1em;
@@ -364,6 +440,25 @@
             color: #FCEAF0;
         }
 
+        #searchbar {
+            width: 20%;
+            float: right;
+            margin-right: 130px;
+            margin-top: 15px;
+        }
+
+        #searchbar img {
+            width: 20%;
+        }
+
+        #shopping-cart {
+            float: right;
+            width: 40%;
+            margin-top: 75px;
+            z-index: 1000;
+            margin-right: 60px;
+        }
+
 
 
     }
@@ -376,16 +471,19 @@
     <!-- HEADER MED LOGO OG NAVIGATION -->
 
     <header>
-        <div id="header-ikoner"><img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
-            <div id="menuknap">☰</div>
-        </div>
-        <div class="menu-container">
-            <div id="logo"><a href="index.html"><img src="img/glittergrej-logo.png" alt="Glittergrej logo">
-                </a>
-            </div>
-        </div>
+
 
         <nav>
+            <div id="header-ikoner"><img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
+                <div id="menuknap">☰</div>
+            </div>
+            <div class="menu-container">
+                <div id="logo"><a href="index.html"><img src="img/glittergrej-logo.png" alt="Glittergrej logo">
+                    </a>
+                </div>
+            </div>
+
+
             <ul id="menu" class="hidden">
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="shop-trial.html">Shop</a></li>
