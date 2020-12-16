@@ -196,6 +196,10 @@
         */
     }
 
+    #video-splash {
+        display: none;
+    }
+
     /***** FORSIDE GALLERI/SPLASH MOBIL *****/
     #forside-galleri {
         position: relative;
@@ -348,70 +352,22 @@
         color: #FCEAF0;
     }
 
-    /* FORSIDE */
-
-    #video-splash .video-splash-knap {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #FCEAF0;
-        color: #FF48AA;
-        font-size: 1.5em;
-        letter-spacing: 1px;
+    /* GLITTER PAA MOBIL */
+    #glitter-paa {
         padding: 30px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 10px;
+    }
+
+    .glitter-paa-text h1 {
         text-align: center;
         text-transform: uppercase;
-        width: auto;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease 0s;
+        color: #FF48AA;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
     }
 
-    .video-splash-pil {
-        position: absolute;
-        top: 95%;
-        left: 45%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-
-        cursor: pointer;
-        width: 10%;
-        /*        height: 30px;*/
-        /*
-        display: flex;
-        align-items: center;
-        justify-content: center;
-*/
-    }
-
-    /* animation pil forside */
-    .enter_arrow {
-        animation-name: enter_arrow_kf;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes enter_arrow_kf {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1);
-        }
+    .glitter-paa-text p {
+        font-size: 1.4em;
+        margin-bottom: 30px;
     }
 
 
@@ -534,6 +490,76 @@
 
         #forside {
             display: none;
+        }
+
+        /* FORSIDE */
+
+        #video-splash {
+            display: inherit;
+        }
+
+        #video-splash .video-splash-knap {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #FCEAF0;
+            color: #FF48AA;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            padding: 30px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            width: auto;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+        }
+
+        .video-splash-pil {
+            position: absolute;
+            top: 95%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+
+            cursor: pointer;
+            width: 10%;
+            /*        height: 30px;*/
+            /*
+        display: flex;
+        align-items: center;
+        justify-content: center;
+*/
+        }
+
+        /* animation pil forside */
+        .enter_arrow {
+            animation-name: enter_arrow_kf;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes enter_arrow_kf {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         #glitter-paa {
