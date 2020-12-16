@@ -122,6 +122,7 @@ footer {
 .sectionwrapper {
     display: flex;
     flex-wrap: wrap;
+    padding: 20px 20px;
 }
 
 .col1 {
