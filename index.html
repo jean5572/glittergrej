@@ -514,9 +514,6 @@
 
 
 
-
-
-
     /***** MEDIA QUERY DESKTOP *****/
 
     @media (min-width: 600px) {
@@ -950,8 +947,11 @@
                 <div class="inaktiv"></div>
                 <div class="inaktiv"></div>
             </div>
-        </div>
-    </section>
+        </div>    </section>
+
+
+
+
 
     <!-- VIDEO SPLASH DESKTOP -->
     <section id="video-splash">
@@ -1104,6 +1104,19 @@
         //BURGERMENU
         window.addEventListener("load", sidenvises);
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/produkter/" + id;
+
+        document.addEventListener("DOMContentLoaded", hentData);
+
+        async function hentData() {
+            const respons = await fetch(link);
+            produkter = await respons.json();
+            vis(produkter);
+        }
+
 
         function sidenvises() {
             console.log("sidenvises");
@@ -1188,6 +1201,9 @@
                 forfra.textContent = "videre";
             }
         }
+
+
+
 
     </script>
 </body>
