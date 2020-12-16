@@ -275,7 +275,7 @@
     }
 
     #pil-til-top {
-        position: relative;
+        position: absolute;
         float: right;
         margin: 0 30px 50px 0;
     }
@@ -529,6 +529,72 @@
             display: none;
         }
 
+        #glitter-paa {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        #glitter-paa h1 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF48AA;
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+
+        .glitter-paa-text p {
+            font-size: 1.87em;
+        }
+
+        .glitter-paa-text {
+            background-color: #FCEAF0;
+            padding: 50px;
+        }
+
+        .glitter-paa-text,
+        .glitter-paa-img {
+            margin: 25px;
+            flex-grow: 1;
+            flex-basis: 500px;
+        }
+
+        #glitter-nyt {
+            display: flex;
+            padding: 30px;
+        }
+
+        .glitter-nyt-produkt {
+
+            flex-grow: 1;
+            flex-basis: 500px;
+            margin: 25px;
+        }
+
+        #glitter-nyt-overskrift {
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #FF48AA;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .glitter-nyt-produkt h3 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000000;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .glitter-nyt-produkt p {
+            font-size: 1.3em;
+            text-align: center;
+        }
+
     }
 
 </style>
@@ -601,36 +667,16 @@
                 <div class="inaktiv"></div>
             </div>
         </div>
-
-
-
-        <!-- PUT GLITTER PÅ LIVET -->
-        <div id="glitter-paa">
-            <h1></h1>
-            <p></p>
-        </div>
-
-        <!-- GLITTERNYT -->
-        <div id="glitter-nyt">
-            <h2></h2>
-            <img src="" alt="">
-        </div>
-
-        <!-- INSTAGRAM -->
-        <h2></h2>
-        <p></p>
-        <div id="instagram-feed">
-            <div class=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
-            <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
-            <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
-        </div>
-
-
-        <!-- PIL TIL TOP -->
-        <div id="pil-til-top">
-            <a href="index.html#forside"><img src="img/arrow-to-top.png" alt="Glittergrej pil til toppen af siden"></a>
-        </div>
     </section>
+
+
+
+
+
+    <!-- PIL TIL TOP -->
+    <div id="pil-til-top">
+        <a href="index.html#forside"><img src="img/arrow-to-top.png" alt="Glittergrej pil til toppen af siden"></a>
+    </div>
 
     <!-- VIDEO SPLASH DESKTOP -->
     <section id="video-splash">
@@ -643,6 +689,54 @@
         <img class="video-splash-pil enter_arrow" src="img/arrow-down.png" alt="Glittergrej forside pil">
 
     </section>
+
+
+
+    <!-- PUT GLITTER PÅ LIVET -->
+    <div id="glitter-paa">
+        <div class="glitter-paa-text">
+            <h1>Put glitter på livet</h1>
+            <p>Glittergrej vil minde dig om, at du skal være glad for alt, som er dig, for du er lige, som du skal være.</p>
+        </div>
+
+        <div class="glitter-paa-img">
+            <img src="img/gg-maya-isa.jpeg" alt="Glittergrej forside billede af Maya Isa Hansen">
+        </div>
+    </div>
+
+    <!-- GLITTERNYT -->
+    <h2 id="glitter-nyt-overskrift">Glitternyt</h2>
+    <div id="glitter-nyt">
+
+        <div class="glitter-nyt-produkt">
+            <a href="singleview-dev.html?id=54"><img src="img/glitter-nyt/glitter-nyt-sunshine-vajayjay.jpg" alt="Glitternyt Sunshine Vajayjay nøglering"></a>
+            <h3>Sunshine Vajayjay</h3>
+            <p>125 kr.</p>
+        </div>
+
+        <div class="glitter-nyt-produkt">
+            <a href="singleview-dev.html?id=51"><img src="img/glitter-nyt/glitter-nyt-trixie-vulva.jpg" alt="Glitternyt Trixie Vulva nøglering"></a>
+            <h3>Trixie Vulva</h3>
+            <p>125 kr.</p>
+        </div>
+
+        <div class="glitter-nyt-produkt">
+            <a href="singleview-dev.html?id=55"><img src="img/glitter-nyt/glitter-nyt-maria-yoni.jpg" alt="Glitternyt Maria Yoni nøglering"></a>
+            <h3>Maria Yoni</h3>
+            <p>125 kr.</p>
+        </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+    <h2></h2>
+    <p></p>
+    <div id="instagram-feed">
+        <div class=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+    </div>
+
+
 
     <!-- FOOTER -->
     <footer>
@@ -712,22 +806,22 @@
         }
 
         //HENT INDHOLD
-        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/9";
+        //const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/9";
 
-        document.addEventListener("DOMContentLoaded", hentData);
+        //document.addEventListener("DOMContentLoaded", hentData);
 
-        async function hentData() {
-            const respons = await fetch(link);
-            forside = await respons.json();
-            vis(forside);
-            console.log('DataHentet')
+        //async function hentData() {
+        //const respons = await fetch(link);
+        //forside = await respons.json();
+        //vis(forside);
+        //console.log('DataHentet')
         }
 
-        function vis(forside) {
-            console.log(forside)
-            //document.querySelector("#forside").innerHTML = forside.content.rendered;
-            //document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
-            document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
+        //function vis(forside) {
+        //console.log(forside)
+        //document.querySelector("#forside").innerHTML = forside.content.rendered;
+        //document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
+        //document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
 
         }
 
