@@ -75,6 +75,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 /* HEADER - MENU */
 header {
     height: 120px;
@@ -340,6 +344,14 @@ footer {
     background-color: #FCEAF0;
 }
 
+footer a {
+    color: black;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 .sectionwrapper {
     display: flex;
     flex-wrap: wrap;
@@ -349,18 +361,25 @@ footer {
 .col1 {
     flex-basis: 100px;
     flex-grow: 1;
+    margin: 20px;
 }
 
 .sectionwrapper2 {
     display: flex;
     flex-wrap: wrap-reverse;
-    flex: 300px;
-    flex-grow: 1;
+    flex: 100px;
+    flex-grow: 3;
 }
 
 .col2 {
-    flex-basis: 300px;
-    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center
+}
+
+.col2 a {
+    margin: 0 15px 0 15px;
 }
 
 /* EVENTS */
