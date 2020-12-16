@@ -275,9 +275,16 @@
     }
 
     #pil-til-top {
+        /*
         position: absolute;
         float: right;
         margin: 0 30px 50px 0;
+*/
+
+
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
     }
 
     /*
@@ -570,7 +577,7 @@
             margin: 25px;
         }
 
-        #glitter-nyt-overskrift {
+        .forside-overskrift {
 
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -595,6 +602,119 @@
             text-align: center;
         }
 
+        /* INSTAGRAM */
+        #instagram-feed {
+            display: flex;
+            flex-wrap: wrap;
+            padding:
+                /*110px*/
+                410px;
+            margin-top: -390px;
+        }
+
+        #instagram-text {
+
+            font-family: 'Jost',
+                sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.4em;
+        }
+
+
+        #instagram-text .forside-overskrift {
+
+            font-family: 'Jost',
+                sans-serif;
+            font-style: normal;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.4em;
+        }
+
+
+
+        #instagram-text a {
+            color: #000000;
+            font-weight: 300;
+        }
+
+        .instagram-enkelt {
+            flex-grow: 1;
+            flex-basis:
+                /*300px*/
+                100px;
+            margin:
+                /*25px*/
+                10px;
+        }
+
+        /* NYHEDSBREV */
+        #nyhedsbrev-text {
+            margin-top: -410px;
+        }
+
+        #nyhedsbrev-text p {
+            text-align: center;
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1.4em;
+        }
+
+        #nyhedsbrev {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 70px;
+            margin-top: 30px;
+
+        }
+
+        .nyhedsbrev-input input {
+            border: 2px solid #FF48AA;
+            width: 300px;
+            height: 60px;
+            margin-right: 30px;
+            border-radius: 10px;
+
+            color: #CCCCCC;
+            text-align: center;
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            font-size: 1.4em;
+            padding: 10px;
+        }
+
+        .nyhedsbrev-input button {
+            /*
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+*/
+            background-color: #FCEAF0;
+            color: #FF48AA;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            padding: 30px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 300px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+        }
+
+
+
     }
 
 </style>
@@ -605,8 +725,6 @@
     <!-- HEADER MED LOGO OG NAVIGATION -->
 
     <header>
-
-
         <nav>
             <div id="header-ikoner"><img id="shopping-cart" src="img/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
                 <div id="menuknap">☰</div>
@@ -669,15 +787,6 @@
         </div>
     </section>
 
-
-
-
-
-    <!-- PIL TIL TOP -->
-    <div id="pil-til-top">
-        <a href="index.html#forside"><img src="img/arrow-to-top.png" alt="Glittergrej pil til toppen af siden"></a>
-    </div>
-
     <!-- VIDEO SPLASH DESKTOP -->
     <section id="video-splash">
         <video autoplay muted loop id="myVideo">
@@ -689,8 +798,6 @@
         <img class="video-splash-pil enter_arrow" src="img/arrow-down.png" alt="Glittergrej forside pil">
 
     </section>
-
-
 
     <!-- PUT GLITTER PÅ LIVET -->
     <div id="glitter-paa">
@@ -705,7 +812,7 @@
     </div>
 
     <!-- GLITTERNYT -->
-    <h2 id="glitter-nyt-overskrift">Glitternyt</h2>
+    <h2 class="forside-overskrift">Glitternyt</h2>
     <div id="glitter-nyt">
 
         <div class="glitter-nyt-produkt">
@@ -728,14 +835,64 @@
     </div>
 
     <!-- INSTAGRAM -->
-    <h2></h2>
-    <p></p>
-    <div id="instagram-feed">
-        <div class=""><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
-        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
-        <div><img src="" alt=""><img src="" alt=""><img src="" alt=""></div>
+
+    <div id="instagram-text">
+        <h2 class="forside-overskrift">Instagram</h2>
+        <a href="https://www.instagram.com/glittergrej/">@glittergrej</a>
     </div>
 
+    <div id="instagram-feed">
+
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta1.jpg" alt="Glittergrej Instagram billede"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/glitter-nyt/glitter-nyt-sunshine-vajayjay.jpg" alt="Glittergrej Instagram citat"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta3.jpg" alt="Glittergrej Instagram billede"></a>
+        </div>
+
+
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta4.jpg" alt="Glittergrej Instagram billede"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/glitter-nyt/glitter-nyt-sunshine-vajayjay.jpg" alt="Glittergrej Instagram citat"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta5.jpg" alt="Glittergrej Instagram billede"></a>
+        </div>
+
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta6.jpg" alt="GlittergrejInstagram billede"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/glitter-nyt/glitter-nyt-sunshine-vajayjay.jpg" alt="Glittergrej Instagram citat"></a>
+        </div>
+        <div class="instagram-enkelt">
+            <a href="https://www.instagram.com/glittergrej/"><img src="img/instagram/insta2.jpg" alt="GlittergrejInstagram billede"></a>
+        </div>
+
+
+    </div>
+
+    <!-- NYHEDSBREV -->
+
+    <div id="nyhedsbrev-text">
+        <h2 class="forside-overskrift">Nyhedsbrev</h2>
+        <p>Tilmeld dig nyhedsbrevet og få rabatter, overraskelser og meget mere.</p>
+    </div>
+
+    <div id="nyhedsbrev">
+        <div class="nyhedsbrev-input"><input type="text" placeholder="Skriv din e-mail" name="newsletter"></div>
+        <div class="nyhedsbrev-input"><button>Tilmeld</button></div>
+    </div>
+
+    <!-- PIL TIL TOP -->
+    <div id="pil-til-top">
+        <a href="index.html#logo"><img src="img/arrow-to-top.png" alt="Glittergrej pil til toppen af siden"></a>
+    </div>
 
 
     <!-- FOOTER -->
