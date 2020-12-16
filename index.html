@@ -73,7 +73,7 @@
 
     /***** HEADER *****/
     header {
-        height: 150px;
+        height: 120px;
         background-color: #FCEAF0;
     }
 
@@ -86,7 +86,9 @@
 
     /*** SHOPPING CART IKON ***/
     #shopping-cart {
-        float: right
+        float: right;
+        width: 100%;
+        margin-top: 15px;
     }
 
     /**** LOGO *****/
@@ -150,6 +152,7 @@
         /*    z-index: 1;*/
         position: relative;
         float: right;
+        color: #FF48AA;
     }
 
     #menu {
@@ -183,16 +186,14 @@
     }
 
     /*** SOCIALE MEDIER IKONER ***/
-    #social-media {
+    #social-media-container {
         display: flex;
-        flex-wrap: nowrap;
-        padding: 30px;
     }
 
-    #social-media img {
-        width: 10%;
-        margin-left: auto;
-        margin-right: auto;
+    .social-media img {
+        width: 12%;
+        margin-left: 80px;
+        */
     }
 
     /***** FORSIDE GALLERI/SPLASH MOBIL *****/
@@ -307,8 +308,8 @@
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="shop-trial.html">Shop</a></li>
                 <li><a href="om-glittergrej.html">Om Glittergrej</a>
-                    <a href="om-glittergrej.html">- Events</a>
-                    <a href="om-glittergrej.html">- Forhandlere</a></li>
+                    <a href="events.html">- Events</a>
+                    <a href="forhandlere.html">- Forhandlere</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
 
                 <div id="searchbar">
@@ -316,9 +317,12 @@
                     <img src="img/searchbar-icon.png" alt="Søgebar ikon">
                 </div>
 
-                <div id="social-media">
-                    <img src="img/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
-                    <img src="img/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
+                <div id="social-media-container">
+                    <div class="social-media">
+                        <img src="img/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
+
+                        <img src="img/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
+                    </div>
                 </div>
             </ul>
         </nav>
