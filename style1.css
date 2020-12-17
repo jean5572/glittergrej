@@ -566,11 +566,22 @@ footer a:hover {
 .om-overskrift,
 .kontakt-overskrift,
 .forhandlere-overskrift {
-    color: #ff48aa;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FF48AA;
 }
 
 #events-information h3 {
-    color: #ff48aa;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 1.17em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FF48AA;
 }
 
 .wp-block-button__link {
