@@ -114,8 +114,8 @@ header img {
 /**** LOGO *****/
 #logo {
     width: 35%;
-    margin-left: 30px;
-    margin-top: 15px;
+    padding: 10px;
+    height: 100%;
 }
 
 /***** NAVIGATION *****/
@@ -219,6 +219,10 @@ li a {
     display: none;
 }
 
+.video-splash-pil {
+    display: none;
+}
+
 /***** FORSIDE GALLERI/SPLASH MOBIL *****/
 #forside-galleri {
     position: relative;
@@ -250,6 +254,17 @@ li a {
 
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
+}
+
+.forside-knap {
+    background-color: #fceaf0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.forside-knap a {
+    text-decoration: none;
+    color: #ff48aa;
 }
 
 /* HOVER TIL DESKTOP */
@@ -302,34 +317,16 @@ li a {
     font-size: 1.25em;
 }
 
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #FCEAF0;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-left: 30px;
-}
-
 .dropdown-content a {
-    color: #FF48AA;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
-
-
-    font-family: 'Jost',
-        sans-serif;
+    color: black;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.25em;
+    color: #FF48AA;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 0.1em;
@@ -337,18 +334,8 @@ li a {
 
 }
 
-.dropdown-content a:hover {
-    background-color: #FF48AA;
-    color: #FCEAF0;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover {
-    background-color: #FF48AA;
-    color: #FCEAF0;
+.glitter-logo {
+    height: 10vh;
 }
 
 /* GLITTER PAA MOBIL */
@@ -601,16 +588,16 @@ footer a:hover {
 }
 
 #om {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.om-glittergrej-paragraph {
     flex-basis: 300px;
     flex-grow: 1;
 }
 
-.om-glittergrej-img {
+.om-sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.maya {
     flex-basis: 300px;
     flex-grow: 1;
 }
@@ -636,15 +623,13 @@ footer a:hover {
     flex-grow: 1;
 }
 
-input[type=text],
-select,
-textarea {
+.konktakt-form {
     width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    /*    margin: 6px 20px 16px 20px;*/
+    margin: 6px 20px 16px 20px;
     resize: vertical;
     font-family: 'Jost', sans-serif;
     letter-spacing: 1px;
@@ -841,131 +826,20 @@ input[type=number] {
 /* MEDIA QUERY DESKTOP */
 @media (min-width: 600px) {
 
-    /* HEADER */
-    header {
-        height: 180px;
-    }
-
-    /* MENU */
-    #logo {
-        width: 12%;
-        margin-left: 30px;
-        margin-top: 20px;
-    }
-
-    #social-media-container {
-        display: none;
-    }
-
-    #menu {
-        position: absolute;
-        top: 15px;
-        left: 220px;
-        background-color: transparent;
-    }
-
-    #menuknap {
-        display: none;
-    }
-
-    .hidden {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    #menu li {
-        display: inline-block;
-    }
-
-    #menu li a {
-        font-size: 1.25em;
-    }
-
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #FCEAF0;
-        min-width: 150px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        margin-left: 30px;
-    }
-
-    .dropdown-content a {
-        color: #FF48AA;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-
-
-        font-family: 'Jost',
-            sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.25em;
-        text-transform: uppercase;
-        text-align: left;
-        letter-spacing: 0.1em;
-        background-color: #FCEAF0;
-
-    }
-
-    .dropdown-content a:hover {
-        background-color: #FF48AA;
-        color: #FCEAF0;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover {
-        background-color: #FF48AA;
-        color: #FCEAF0;
-    }
-
-    #searchbar {
-        width: 20%;
-        float: right;
-        margin-right: 130px;
-        margin-top: 15px;
-    }
-
-    #searchbar img {
-        width: 13%;
-    }
-
-    #shopping-cart {
-        float: right;
-        width: 40%;
-        margin-top: 75px;
-        z-index: 1000;
-        margin-right: 60px;
-    }
-
-    #forside {
-        display: none;
-    }
 
     /* FORSIDE */
     #myVideo {
-        width: 100vw;
+        grid-row: 1/4;
+        grid-column: 1/4;
+        width: 100%;
     }
 
     #video-splash {
-        display: inherit;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
     }
 
     #video-splash .video-splash-knap {
-        position: absolute;
-        top: 80%;
-        left: 35%;
         background-color: #FCEAF0;
         color: #FF48AA;
         font-size: 1.5em;
@@ -987,12 +861,17 @@ input[type=number] {
     }
 
     .video-splash-pil {
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        cursor: pointer;
         width: 5%;
-        */
+        position: absolute;
+        top: 90vh;
+        left: 47.5%;
+    }
+
+    .video-ekstra {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        z-index: 2;
+        justify-self: center;
     }
 
     /* animation pil forside */
@@ -1218,15 +1097,142 @@ input[type=number] {
 }
 
 @media (min-width: 1100px) {
-    #video-splash .video-splash-knap {
-        position: absolute;
-        top: 80%;
-        left: 36%;
+
+    /* HEADER */
+    header {
+        height: 180px;
+    }
+
+    nav {
+        height: 100%;
     }
 
     .video-splash-pil {
+        display: inline-block;
+    }
+
+    .menu-container {
+        height: 100%
+    }
+
+    /* MENU */
+    #logo {
+        width: 12%;
+        padding: 10px;
+        height: 100%;
+        margin: 0;
+    }
+
+    .glitter-logo {
+        height: 100%;
+    }
+
+    #social-media-container {
+        display: none;
+    }
+
+    #menu {
+        height: 0;
         position: absolute;
-        top: 90%;
-        left: 47%;
+        top: 15px;
+        left: 220px;
+        background-color: transparent;
+    }
+
+    #menuknap {
+        display: none;
+    }
+
+    .hidden {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    #menu li {
+        display: inline-block;
+    }
+
+    #menu li a {
+        font-size: 1.25em;
+    }
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #FCEAF0;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-left: 30px;
+    }
+
+    .dropdown-content a {
+        color: #FF48AA;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Jost', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.25em;
+        text-transform: uppercase;
+        text-align: left;
+        letter-spacing: 0.1em;
+        background-color: #FCEAF0;
+
+    }
+
+    .dropdown-content a:hover {
+        background-color: #FF48AA;
+        color: #FCEAF0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover {
+        background-color: #FF48AA;
+        color: #FCEAF0;
+    }
+
+    #searchbar {
+        width: 20%;
+        float: right;
+        margin-right: 130px;
+        margin-top: 15px;
+    }
+
+    #searchbar img {
+        width: 13%;
+    }
+
+    #shopping-cart {
+        float: right;
+        width: 40%;
+        margin-top: 75px;
+        z-index: 1000;
+        margin-right: 60px;
+    }
+
+    #forside {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1300px) {
+    .dropdown-content a {
+        font-size: 0.9em;
+    }
+
+    #menu li a {
+        font-size: 0.9em;
     }
 }
