@@ -9,10 +9,6 @@ html {
 }
 
 body {
-    /*
-    width: 100vw;
-    margin: 0 auto;
-*/
     font-family: 'Jost', sans-serif;
     background-color: #FDFDFD;
 }
@@ -79,10 +75,15 @@ a:hover {
     text-decoration: underline;
 }
 
-/* HEADER - MENU */
+/***** HEADER *****/
 header {
     height: 120px;
     background-color: #FCEAF0;
+}
+
+header img {
+    object-fit: contain;
+    vertical-align: middle;
 }
 
 #header-ikoner {
@@ -204,6 +205,10 @@ li a {
     */
 }
 
+#video-splash {
+    display: none;
+}
+
 /***** FORSIDE GALLERI/SPLASH MOBIL *****/
 #forside-galleri {
     position: relative;
@@ -236,6 +241,8 @@ li a {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
 }
+
+/* HOVER TIL DESKTOP */
 
 .forside-pil-venstre {
     width: 10%;
@@ -276,9 +283,9 @@ li a {
 }
 
 #pil-til-top {
-    position: absolute;
-    float: right;
-    margin: 0 30px 50px 0;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
 
 #menu li a {
@@ -333,6 +340,162 @@ li a {
     background-color: #FF48AA;
     color: #FCEAF0;
 }
+
+/* GLITTER PAA MOBIL */
+#glitter-paa {
+    padding: 30px;
+}
+
+.glitter-paa-text h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #FF48AA;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.glitter-paa-text p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+.glitter-paa-img {
+    margin-bottom: 50px;
+}
+
+/* GLITTERNYT MOBIL */
+
+.forside-overskrift {
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FF48AA;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#glitter-nyt {
+    padding: 30px;
+}
+
+.glitter-nyt-produkt h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000000;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.glitter-nyt-produkt p {
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* INSTAGRAM MOBIL */
+#instagram-feed {
+    padding: 30px;
+}
+
+
+
+#instagram-text {
+    margin-top: -30px;
+
+
+    font-family: 'Jost',
+        sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+#instagram-text a {
+    text-align: center;
+    color: #000000;
+    font-weight: 300;
+    font-size: 1.4em;
+
+}
+
+#instagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 26px;
+}
+
+.instagram-enkelt {
+    flex-grow: 1;
+    flex-basis:
+        /*300px*/
+        100px;
+    padding: 5px;
+}
+
+
+/* NYHEDSBREV MOBIL */
+#nyhedsbrev-text {
+    margin-top: 40px;
+}
+
+#nyhedsbrev-text p {
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.4em;
+}
+
+#nyhedsbrev {
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 30px;
+
+}
+
+.nyhedsbrev-input input {
+    border: 2px solid #FF48AA;
+    width: 300px;
+    height: 60px;
+    margin-right: 30px;
+    border-radius: 10px;
+
+    color: #CCCCCC;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.4em;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.nyhedsbrev-input button {
+    background-color: #FCEAF0;
+    color: #FF48AA;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    padding: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    margin-left: 60px;
+}
+
 
 /* FOOTER */
 .img-kort,
@@ -455,13 +618,12 @@ footer a:hover {
 input[type=text],
 select,
 textarea {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
+    margin: 6px 20px 16px 20px;
     resize: vertical;
     font-family: 'Jost', sans-serif;
     letter-spacing: 1px;
@@ -674,6 +836,7 @@ input[type=number] {
         position: absolute;
         top: 15px;
         left: 220px;
+        background-color: transparent;
     }
 
     #menuknap {
@@ -761,6 +924,250 @@ input[type=number] {
         margin-right: 60px;
     }
 
+    #forside {
+        display: none;
+    }
+
+    /* FORSIDE */
+    #myVideo {
+        width: 100vw;
+    }
+
+    #video-splash {
+        display: inherit;
+    }
+
+    #video-splash .video-splash-knap {
+        position: absolute;
+        top: 80%;
+        left: 35%;
+        background-color: #FCEAF0;
+        color: #FF48AA;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        padding: 30px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+    }
+
+    .video-splash-pil {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        cursor: pointer;
+        width: 5%;
+        */
+    }
+
+    /* animation pil forside */
+    .enter_arrow {
+        animation-name: enter_arrow_kf;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes enter_arrow_kf {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    #glitter-paa {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    #glitter-paa h1 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #FF48AA;
+        font-size: 3em;
+        margin-bottom: 30px;
+    }
+
+    .glitter-paa-text p {
+        font-size: 1.87em;
+    }
+
+    .glitter-paa-text {
+        background-color: #FCEAF0;
+        padding: 50px;
+    }
+
+    .glitter-paa-text,
+    .glitter-paa-img {
+        margin: 25px;
+        flex-grow: 1;
+        flex-basis: 500px;
+    }
+
+    #glitter-nyt {
+        display: flex;
+        padding: 30px;
+    }
+
+    .glitter-nyt-produkt {
+
+        flex-grow: 1;
+        flex-basis: 500px;
+        margin: 25px;
+    }
+
+    .forside-overskrift {
+
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #FF48AA;
+        font-size: 2em;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .glitter-nyt-produkt h3 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #000000;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .glitter-nyt-produkt p {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    /* INSTAGRAM */
+    #instagram-feed {
+        display: flex;
+        flex-wrap: wrap;
+        padding:
+            /*110px*/
+            410px;
+        margin-top: -390px;
+    }
+
+    #instagram-text {
+
+        font-family: 'Jost',
+            sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+
+    #instagram-text .forside-overskrift {
+
+        font-family: 'Jost',
+            sans-serif;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+
+
+    #instagram-text a {
+        color: #000000;
+        font-weight: 300;
+    }
+
+    .instagram-enkelt {
+        flex-grow: 1;
+        flex-basis:
+            /*300px*/
+            100px;
+        margin:
+            /*25px*/
+            10px;
+    }
+
+    /* NYHEDSBREV */
+    #nyhedsbrev-text {
+        margin-top: -410px;
+    }
+
+    #nyhedsbrev-text p {
+        text-align: center;
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.4em;
+    }
+
+    #nyhedsbrev {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 70px;
+        margin-top: 30px;
+
+    }
+
+    .nyhedsbrev-input input {
+        border: 2px solid #FF48AA;
+        width: 300px;
+        height: 60px;
+        margin-right: 30px;
+        border-radius: 10px;
+
+        color: #CCCCCC;
+        text-align: center;
+        font-family: 'Jost', sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.4em;
+        padding: 10px;
+    }
+
+    .nyhedsbrev-input button {
+        /*
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+*/
+        background-color: #FCEAF0;
+        color: #FF48AA;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        padding: 30px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 300px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+    }
+
     /* MAINS */
     .events-main,
     .om-glittergrej-main,
@@ -783,4 +1190,18 @@ input[type=number] {
         width: 600px;
     }
 
+}
+
+@media (min-width: 1100px) {
+    #video-splash .video-splash-knap {
+        position: absolute;
+        top: 80%;
+        left: 36%;
+    }
+
+    .video-splash-pil {
+        position: absolute;
+        top: 90%;
+        left: 47%;
+    }
 }
