@@ -540,6 +540,7 @@
             position: absolute;
             top: 15px;
             left: 220px;
+            background-color: transparent;
         }
 
         #menuknap {
@@ -632,6 +633,9 @@
         }
 
         /* FORSIDE */
+        #myVideo {
+            width: 100vw;
+        }
 
         #video-splash {
             display: inherit;
@@ -640,9 +644,7 @@
         #video-splash .video-splash-knap {
             position: absolute;
             top: 80%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
+            left: 35%;
             background-color: #FCEAF0;
             color: #FF48AA;
             font-size: 1.5em;
@@ -665,19 +667,11 @@
 
         .video-splash-pil {
             position: absolute;
-            top: 95%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-
+            top: 90%;
+            left: 50%;
             cursor: pointer;
-            width: 10%;
-            /*        height: 30px;*/
-            /*
-        display: flex;
-        align-items: center;
-        justify-content: center;
-*/
+            width: 5%;
+            */
         }
 
         /* animation pil forside */
@@ -881,6 +875,24 @@
 
 
     }
+<<<<<<< HEAD
+=======
+
+    @media (min-width: 1100px) {
+        #video-splash .video-splash-knap {
+            position: absolute;
+            top: 80%;
+            left: 36%;
+        }
+
+        .video-splash-pil {
+            position: absolute;
+            top: 90%;
+            left: 47%;
+        }
+    }
+
+>>>>>>> finestyling
 </style>
 
 
@@ -961,10 +973,12 @@
             <source src="video/glittergrej-splash-video.mp4" type="video/mp4">
         </video>
 
-        <button class="video-splash-knap">Shop Glittergrej</button>
+        <div class="video-ekstra">
+            <button class="video-splash-knap">Shop Glittergrej</button>
 
+
+        </div>
         <img class="video-splash-pil enter_arrow" src="img/arrow-down.png" alt="Glittergrej forside pil">
-
     </section>
 
     <!-- PUT GLITTER PÅ LIVET -->
@@ -1106,20 +1120,6 @@
         //BURGERMENU
         window.addEventListener("load", sidenvises);
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id");
-
-        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/produkter/" + id;
-
-        document.addEventListener("DOMContentLoaded", hentData);
-
-        async function hentData() {
-            const respons = await fetch(link);
-            produkter = await respons.json();
-            vis(produkter);
-        }
-
-
         function sidenvises() {
             console.log("sidenvises");
 
@@ -1153,7 +1153,7 @@
         //forside = await respons.json();
         //vis(forside);
         //console.log('DataHentet')
-        }
+        //        }
 
         //function vis(forside) {
         //console.log(forside)
@@ -1161,7 +1161,7 @@
         //document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
         //document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
 
-        }
+        //        }
 
         //FORSIDE GALLERI
         //Opret tæller
@@ -1205,7 +1205,10 @@
         }
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 =======
 >>>>>>> amalie-insta-nye-billeder
+=======
+>>>>>>> finestyling
     </script>
 </body></html>
