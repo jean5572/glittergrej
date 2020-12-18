@@ -10,6 +10,7 @@
     <meta name="author" content="Glittergrej">
 
     <title>Glittergrej ✨ Forside</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap" rel="stylesheet">
@@ -74,36 +75,20 @@
     <img class="video-splash-pil enter_arrow" src="img/arrow-down.png" alt="Glittergrej forside pil">
 
     <!-- SECTION FORSIDE -->
-
-
-
-
-
-
-    <section id="forside">
-
-        <div id="forside-galleri">
-            <img src="slideshow_img/img1.jpeg" alt="Forside galleri billede 1">
-
-
-            <button type="button" class="forside-knap" onclick='location.href="shop-trial.html"'><a href="shop-trial.html">Shop Glittergrej</a></button>
-
-
-
-            <img class="forside-pil-venstre" src="img/arrow-left.png" alt="forside-galleri-venstre-pil">
-
-            <img class="forside-pil-hoejre" src="img/arrow-right.png" alt="forside-galleri-hoejre-pil">
-
-
-            <div class="forside-galleri-circles">
-                <div class="aktiv"></div>
-                <div class="inaktiv"></div>
-                <div class="inaktiv"></div>
-            </div>
+    <div class="carousel-container">
+        <i class="fas fa-arrow-left" id="prevBtn"></i>
+        <i class="fas fa-arrow-right" id="nextBtn"></i>
+        <div class="carousel-slide">
+            <img src="img/front/trixie4-big.jpg" alt="trio" id="lastClone">
+            <img src="img/front/barbie_coochie2-big.jpg" alt="barbie_coochie">
+            <img src="img/front/bogmaerke1-big.jpg" alt="bogmaerke">
+            <img src="img/front/farveladebog2-big.jpg" alt="farveladebog">
+            <img src="img/front/maria_yoni2-big.jpg" alt="maria_yoni">
+            <img src="img/front/bogmaerke2-big.jpg" alt="bogmaerke">
+            <img src="img/front/trixie4-big.jpg" alt="trio">
+            <img src="img/front/barbie_coochie2-big.jpg" alt="barbie_coochie" id="firstClone">
         </div>
-    </section>
-
-
+    </div>
 
 
     <!-- VIDEO SPLASH DESKTOP -->
@@ -252,98 +237,100 @@
     </footer>
     <!-- JAVASCRIPT -->
     <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            console.log('DOM loaded');
+        "use strict";
+        const carouselSlide = document.querySelector('.carousel-slide');
+        //Giver alle billeder
+        const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+        //Knapper
+        const prevBtn = document.querySelector('#prevBtn');
+        const nextBtn = document.querySelector('#nextBtn');
+
+        //counter
+        let counter = 1;
+        const size = carouselImages[0].clientWidth;
+
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+        //Knapper Listeners
+        nextBtn.addEventListener('click', () => {
+            if (counter >= carouselImages.length - 1) return;
+            carouselSlide.style.transition = "transform 0.4s ease-in.out";
+            //plus en
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            //            console.log(carouselImages[counter]);
         });
 
-        //BURGERMENU
-        window.addEventListener("load", sidenvises);
-
-        function sidenvises() {
-            console.log("sidenvises");
-
-            document.querySelector("#menuknap").addEventListener("click", toggleMenu)
-        }
-
-        function toggleMenu() {
-            console.log("toggleMenu");
-
-            document.querySelector("#menu").classList.toggle("hidden");
-
-            let erskjult = document.querySelector("#menu").classList.contains("hidden");
-
-            if (erskjult == true) {
-
-                document.querySelector("#menuknap").textContent = "☰";
-
-            } else {
-                document.querySelector("#menuknap").textContent = "x";
+        prevBtn.addEventListener('click', () => {
+            if (counter <= 0) return;
+            carouselSlide.style.transition = "transform 0.4s ease-in.out";
+            //minus en
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+        //
+        //        carouselSlide.addEventListener('transitionend', () => {
+        //            console.log(carouselImages[counter]);
+        //        });
+        carouselSlide.addEventListener('ontransitionend', () => {
+            if (carouselImages[counter] === 'lastClone') {
+                carouselSlide.style.transition = "none";
+                counter = carouselImages.length - 2;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
             }
+            if (carouselImages[counter] === 'firstClone') {
+                carouselSlide.style.transition = "none";
+                counter = carouselImages.length - counter;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+        });
 
-        }
-
-        //HENT INDHOLD
-        //const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/pages/9";
-
-        //document.addEventListener("DOMContentLoaded", hentData);
-
-        //async function hentData() {
-        //const respons = await fetch(link);
-        //forside = await respons.json();
-        //vis(forside);
-        //console.log('DataHentet')
-        //        }
-
-        //function vis(forside) {
-        //console.log(forside)
-        //document.querySelector("#forside").innerHTML = forside.content.rendered;
-        //document.querySelector("#glitter-paa h1").innerHTML = forside.excerpt.rendered;
-        //document.querySelector("#glitter-paa p").innerHTML = forside.excerpt.rendered;
-
-        //        }
 
         //FORSIDE GALLERI
         //Opret tæller
-        let number = 0;
-
-        const forfra = document.querySelector("button");
-
-        //Find billede
-        const image = document.querySelector("img");
-
-        //Opret array
-        let slideshowImages = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
-
-        //Klik på knap for at skifte til næste billede
-        const button = document.querySelector("button");
-        button.addEventListener("click", nextImage);
-
-        //Funktion til at skifte til næste billedet
-        function nextImage() {
-
-            //Hvis navnet på billedet er mindre end billede array, så skal billedet skifte
-            if (number < 8) {
-
-                //Tæl op
-                number++;
-
-                console.log(slideshowImages[number]);
-
-                image.src = "slideshow_img/" + slideshowImages[number];
-
-
-                if (number == 7) {
-                    const forfra = document.querySelector("#startOver");
-                    forfra.textContent = "Forfra";
-                    number = -1;
-                }
-
-            } else {
-                forfra.textContent = "videre";
-            }
-        }
+        //        let number = 0;
+        //
+        //        const forfra = document.querySelector("button");
+        //
+        //        //Find billede
+        //        const image = document.querySelector("img");
+        //
+        //        //Opret array
+        //        let slideshowImages = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+        //
+        //        //Klik på knap for at skifte til næste billede
+        //        const button = document.querySelector("button");
+        //        button.addEventListener("click", nextImage);
+        //
+        //        //Funktion til at skifte til næste billedet
+        //        function nextImage() {
+        //
+        //            //Hvis navnet på billedet er mindre end billede array, så skal billedet skifte
+        //            if (number < 8) {
+        //
+        //                //Tæl op
+        //                number++;
+        //
+        //                console.log(slideshowImages[number]);
+        //
+        //                image.src = "slideshow_img/" + slideshowImages[number];
+        //
+        //
+        //                if (number == 7) {
+        //                    const forfra = document.querySelector("#startOver");
+        //                    forfra.textContent = "Forfra";
+        //                    number = -1;
+        //                }
+        //
+        //            } else {
+        //                forfra.textContent = "videre";
+        //            }
+        //        }
 
     </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
