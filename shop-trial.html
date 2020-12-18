@@ -79,7 +79,7 @@
 
         <section id="container"></section>
 
-        <template class="destination-template">
+        <template>
             <article id="grid-article">
                 <img src="" alt="" class="produktbillede1">
                 <h1 class="produktnavn"></h1>
@@ -181,12 +181,14 @@
 
     }
 
+    //Kommer fra hentData
     function addEventListenersToButtons() {
         document.querySelectorAll(".filter").forEach((btn) => {
             btn.addEventListener("click", filterBTNs);
         });
     }
 
+    //tilføj kategori til knap
     function filterBTNs() {
         filter = this.dataset.item;
         document.querySelectorAll(".filter").forEach((btn) => {
