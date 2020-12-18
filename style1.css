@@ -22,23 +22,20 @@ img {
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap');
 
 /*** FONT REGULAR ***/
+/*
 font-family: 'Jost',
 sans-serif;
 font-weight: 400;
 
-/*** FONT LIGHT ***/
+** FONT LIGHT **
 font-family: 'Jost',
 sans-serif;
 font-weight: 300;
-
-/*** FONT BOLD ***/
-font-family: 'Jost',
-sans-serif;
-font-weight: 700;
+*/
 
 h1 {
     font-family: 'Jost', sans-serif;
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
     font-size: 2em;
     letter-spacing: 1px;
@@ -102,6 +99,7 @@ header img {
     float: right;
     justify-content: right;
     margin-right: 30px;
+    cursor: pointer;
 }
 
 /*** SHOPPING CART IKON ***/
@@ -178,7 +176,7 @@ li a {
     list-style-type: none;
     height: 200vh;
     background-color: #FCEAF0;
-    padding-top: 50px;
+    margin-top: 30px;
 }
 
 .menu-container {
@@ -241,7 +239,6 @@ li a {
     padding: 10px 30px;
     padding: 10%;
     border: none;
-    outline: none;
     cursor: pointer;
     border-radius: 10px;
     text-align: center;
@@ -393,10 +390,17 @@ li a {
 
 /* INSTAGRAM MOBIL */
 #instagram-feed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 30px;
 }
 
-
+.instagram-enkelt {
+    height: auto;
+}
 
 #instagram-text {
     margin-top: -30px;
@@ -419,6 +423,8 @@ li a {
 
 }
 
+/*
+
 #instagram-feed {
     display: flex;
     flex-wrap: wrap;
@@ -428,15 +434,16 @@ li a {
 .instagram-enkelt {
     flex-grow: 1;
     flex-basis:
-        /*300px*/
+        300px
         100px;
     padding: 5px;
 }
+*/
 
 
 /* NYHEDSBREV MOBIL */
 #nyhedsbrev-text {
-    margin-top: 40px;
+    margin: 30px;
 }
 
 #nyhedsbrev-text p {
@@ -458,7 +465,6 @@ li a {
     border: 2px solid #FF48AA;
     width: 300px;
     height: 60px;
-    margin-right: 30px;
     border-radius: 10px;
 
     color: #CCCCCC;
@@ -469,6 +475,13 @@ li a {
     font-size: 1.4em;
     padding: 10px;
     margin-bottom: 20px;
+}
+
+.nyhedsbrev-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .nyhedsbrev-input button {
@@ -489,8 +502,7 @@ li a {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    margin-left: 60px;
+    transition: all 0.3s ease 0s
 }
 
 
@@ -569,6 +581,15 @@ footer a:hover {
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #FF48AA;
+    margin-bottom: 30px;
+}
+
+#events-information p + h3 {
+    margin-top: 30px;
+}
+
+#events-information h4 + .space {
+    margin-bottom: 30px;
 }
 
 .wp-block-button__link {
@@ -579,7 +600,12 @@ footer a:hover {
 }
 
 .tilmeld-btn {
-    margin: 20px 0 20px 0;
+    margin: 20px 0 50px 0;
+}
+
+.tilmeld-btn .wp-block-button__link {
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* OM-GLITTERGREJ */
@@ -590,6 +616,7 @@ footer a:hover {
 #om {
     flex-basis: 300px;
     flex-grow: 1;
+    margin-bottom: 30px;
 }
 
 .om-sectionwrapper {
@@ -600,6 +627,7 @@ footer a:hover {
 .maya {
     flex-basis: 300px;
     flex-grow: 1;
+    margin-bottom: 30px;
 }
 
 /* KONTAKT */
@@ -621,6 +649,8 @@ footer a:hover {
     padding: 20px;
     flex-basis: 400px;
     flex-grow: 1;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .konktakt-form {
@@ -641,12 +671,13 @@ footer a:hover {
 input[type=submit] {
     background-color: #ff48aa;
     color: #fdfdfd;
-    padding: 8px 16px;
+    padding: 15px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Jost', sans-serif;
     letter-spacing: 1px;
+    font-size: 1em;
 }
 
 /* styling af mouse over */
@@ -691,7 +722,7 @@ input[type=submit]:hover {
 .filtre button {
     background-color: rgba(255, 255, 255, 0.8);
     color: #FF48AA;
-    font-size: 0.8em;
+    font-size: 1em;
     padding: 5px 5px;
     border: none;
     cursor: pointer;
@@ -804,11 +835,14 @@ input[type=number] {
 .laeg-i-kurv {
     background-color: #FCEAF0;
     color: #FF48AA;
-    padding: 10px 30px;
+    padding: 20px 20px;
     border-radius: 10px;
     margin-top: 10px;
     border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
 }
+
 
 #more {
     margin: auto;
@@ -825,91 +859,9 @@ input[type=number] {
 
 /* MEDIA QUERY DESKTOP */
 @media (min-width: 600px) {
-
-
-    /* FORSIDE */
-    #myVideo {
-        grid-row: 1/4;
-        grid-column: 1/4;
-        width: 100%;
-    }
-
-    #video-splash {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-
-    #video-splash .video-splash-knap {
-        background-color: #FCEAF0;
-        color: #FF48AA;
-        font-size: 1.5em;
-        letter-spacing: 1px;
-        padding: 30px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 10px;
-        text-align: center;
-        text-transform: uppercase;
-        width: auto;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease 0s;
-    }
-
-    .video-splash-pil {
-        width: 5%;
-        position: absolute;
-        top: 90vh;
-        left: 47.5%;
-    }
-
-    .video-ekstra {
-        grid-row: 2/3;
-        grid-column: 2/3;
-        z-index: 2;
-        justify-self: center;
-    }
-
-    /* animation pil forside */
-    .enter_arrow {
-        animation-name: enter_arrow_kf;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes enter_arrow_kf {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
     #glitter-paa {
         display: flex;
         margin-top: 50px;
-    }
-
-    #glitter-paa h1 {
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #FF48AA;
-        font-size: 3em;
-        margin-bottom: 30px;
-    }
-
-    .glitter-paa-text p {
-        font-size: 1.87em;
     }
 
     .glitter-paa-text {
@@ -962,12 +914,11 @@ input[type=number] {
     }
 
     /* INSTAGRAM */
+    /*
     #instagram-feed {
         display: flex;
         flex-wrap: wrap;
-        padding:
-            /*110px*/
-            410px;
+        padding: 410px;
         margin-top: -390px;
     }
 
@@ -985,8 +936,7 @@ input[type=number] {
 
     #instagram-text .forside-overskrift {
 
-        font-family: 'Jost',
-            sans-serif;
+        font-family: 'Jost', sans-serif;
         font-style: normal;
         text-decoration: none;
         text-align: center;
@@ -1002,18 +952,12 @@ input[type=number] {
 
     .instagram-enkelt {
         flex-grow: 1;
-        flex-basis:
-            /*300px*/
-            100px;
-        margin:
-            /*25px*/
-            10px;
+        flex-basis: 100px;
+        margin: 10px;
     }
+*/
 
     /* NYHEDSBREV */
-    #nyhedsbrev-text {
-        margin-top: -410px;
-    }
 
     #nyhedsbrev-text p {
         text-align: center;
@@ -1048,10 +992,6 @@ input[type=number] {
     }
 
     .nyhedsbrev-input button {
-        /*
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-*/
         background-color: #FCEAF0;
         color: #FF48AA;
         font-size: 1.5em;
@@ -1070,6 +1010,8 @@ input[type=number] {
         justify-content: center;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease 0s;
+
+        margin-bottom: 20px;
     }
 
     /* MAINS */
@@ -1092,6 +1034,7 @@ input[type=number] {
     /*  KONTAKT  */
     .container-formular {
         width: 600px;
+        margin-top: 0px;
     }
 
 }
@@ -1137,6 +1080,8 @@ input[type=number] {
         top: 15px;
         left: 220px;
         background-color: transparent;
+        margin: 0;
+        padding-top: 50px;
     }
 
     #menuknap {
@@ -1224,6 +1169,84 @@ input[type=number] {
     #forside {
         display: none;
     }
+
+    /* FORSIDE */
+    #myVideo {
+        grid-row: 1/4;
+        grid-column: 1/4;
+        width: 100%;
+    }
+
+    #video-splash {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    #video-splash a {
+        text-decoration: none;
+    }
+
+    #video-splash a:hover {
+        text-decoration: underline;
+        color: #FF48AA;
+    }
+
+    #video-splash .video-splash-knap {
+        background-color: #FCEAF0;
+        color: #FF48AA;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        padding: 30px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+    }
+
+    .video-splash-pil {
+        width: 5%;
+        position: absolute;
+        top: 90vh;
+        left: 47.5%;
+    }
+
+    .video-ekstra {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        z-index: 2;
+        justify-self: center;
+    }
+
+    /* animation pil forside */
+    .enter_arrow {
+        animation-name: enter_arrow_kf;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes enter_arrow_kf {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
 
 }
 
