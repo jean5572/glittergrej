@@ -121,84 +121,86 @@
 
     </footer>
 
+    <script>
+        //FILTER
+        let filter = "alle";
+        let produkter;
+        let container = document.querySelector("#container");
+        let temp = document.querySelector("template");
+
+        //URL + ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/produkter?per_page=100"
+
+        //Load Site + function
+        document.addEventListener("DOMContentLoaded", hentData);
+
+
+        async function hentData() {
+            const respons = await fetch(link);
+            produkter = await respons.json();
+            addEventListenersToButtons();
+            vis(produkter);
+        }
+
+        function vis(produkter) {
+            //Løber igennem array "produkter" fra JSON (WP)
+            container.innerHTML = "";
+            //forEach Loop
+            produkter.forEach(produkt => {
+                if (filter == "alle" || filter == produkt.categories) {
+                    console.log(produkt);
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector(".produktnavn").textContent = produkt.produktnavn;
+                    klon.querySelector(".produktbillede1").src = produkt.produktbillede_1.guid;
+                    klon.querySelector(".produktpris").textContent = produkt.produktpris + " kr.";
+
+                    //EventListener "click" + visDetaljer
+                    klon.querySelector("article").addEventListener("click", () => visDetaljer(produkt));
+
+                    container.appendChild(klon);
+
+                }
+
+            })
+            //Alle produkters ID
+            produkter.forEach(produkt => {
+                if (id == produkt.id) {
+                    visDetaljer(produkt)
+                }
+            })
+        }
+
+        //Location.href til Singlview
+        function visDetaljer(produkt) {
+            location.href = `singleview-dev.html?id=${produkt.id}`;
+
+        }
+
+        //Kommer fra hentData
+        function addEventListenersToButtons() {
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.addEventListener("click", filterBTNs);
+            });
+        }
+
+        //tilføj kategori til knap
+        function filterBTNs() {
+            filter = this.dataset.item;
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.classList.remove("valgt");
+            });
+
+            this.classList.add("valgt");
+            vis(produkter);
+        }
+
+    </script>
+    <script src="script.js"></script>
+
 </body>
-<script>
-    //FILTER
-    let filter = "alle";
-    let produkter;
-    let container = document.querySelector("#container");
-    let temp = document.querySelector("template");
 
-    //URL + ID
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-
-    const link = "http://creativeworld.dk/kea02/tema10/glittergrej/wordpress/wp-json/wp/v2/produkter?per_page=100"
-
-    //Load Site + function
-    document.addEventListener("DOMContentLoaded", hentData);
-
-
-    async function hentData() {
-        const respons = await fetch(link);
-        produkter = await respons.json();
-        addEventListenersToButtons();
-        vis(produkter);
-    }
-
-    function vis(produkter) {
-        //Løber igennem array "produkter" fra JSON (WP)
-        container.innerHTML = "";
-        //forEach Loop
-        produkter.forEach(produkt => {
-            if (filter == "alle" || filter == produkt.categories) {
-                console.log(produkt);
-                const klon = temp.cloneNode(true).content;
-                klon.querySelector(".produktnavn").textContent = produkt.produktnavn;
-                klon.querySelector(".produktbillede1").src = produkt.produktbillede_1.guid;
-                klon.querySelector(".produktpris").textContent = produkt.produktpris + " kr.";
-
-                //EventListener "click" + visDetaljer
-                klon.querySelector("article").addEventListener("click", () => visDetaljer(produkt));
-
-                container.appendChild(klon);
-
-            }
-
-        })
-        //Alle produkters ID
-        produkter.forEach(produkt => {
-            if (id == produkt.id) {
-                visDetaljer(produkt)
-            }
-        })
-    }
-
-    //Location.href til Singlview
-    function visDetaljer(produkt) {
-        location.href = `singleview-dev.html?id=${produkt.id}`;
-
-    }
-
-    //Kommer fra hentData
-    function addEventListenersToButtons() {
-        document.querySelectorAll(".filter").forEach((btn) => {
-            btn.addEventListener("click", filterBTNs);
-        });
-    }
-
-    //tilføj kategori til knap
-    function filterBTNs() {
-        filter = this.dataset.item;
-        document.querySelectorAll(".filter").forEach((btn) => {
-            btn.classList.remove("valgt");
-        });
-
-        this.classList.add("valgt");
-        vis(produkter);
-    }
-
-</script>
-<script src="script.js"></script>
 
 </html>

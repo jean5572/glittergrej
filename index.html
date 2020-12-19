@@ -46,28 +46,31 @@
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="shop-trial.html">Shop</a></li>
 
-                <div class="dropdown">
-                    <li><a href="om-glittergrej.html">Om Glittergrej</a></li>
-                    <div class="dropdown-content">
-                        <a href="events.html">Events</a>
-                        <a href="forhandlere.html">Forhandlere</a>
-                    </div>
-                </div>
+                <!--                <li class="dropdown"></li>-->
+                <li class="dropdown">
+                    <a href="om-glittergrej.html">Om Glittergrej</a>
+                </li>
+
+                <li class="dropdown-content">
+                    <a href="events.html">Events</a>
+                    <a href="forhandlere.html">Forhandlere</a>
+                </li>
+
 
                 <li><a href="kontakt.html">Kontakt</a></li>
 
-                <div id="searchbar">
+                <ol id="searchbar">
                     <input type="text" placeholder="Søg..." name="search">
                     <img src="img/ikoner/searchbar-icon.png" alt="Søgebar ikon">
-                </div>
+                </ol>
 
-                <div id="social-media-container">
-                    <div class="social-media">
+                <ol id="social-media-container">
+                    <ol class="social-media">
                         <img src="img/ikoner/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
 
                         <img src="img/ikoner/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
-                    </div>
-                </div>
+                    </ol>
+                </ol>
             </ul>
         </nav>
     </header>
@@ -94,9 +97,7 @@
     <!-- VIDEO SPLASH DESKTOP -->
     <section id="video-splash">
         <div class="video-ekstra">
-            <a href="shop-trial.html">
-                <button class="video-splash-knap">Shop Glittergrej</button>
-            </a>
+            <button class="video-splash-knap" onclick="location.href='shop-trial.html'">Shop Glittergrej</button>
         </div>
 
         <video autoplay muted loop id="myVideo">
