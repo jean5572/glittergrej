@@ -10,9 +10,9 @@ function sidenvises() {
 function toggleMenu() {
     console.log("toggleMenu");
 
-    document.querySelector("#menu").classList.toggle("hidden");
+    document.querySelector(".menu").classList.toggle("hidden");
 
-    let erskjult = document.querySelector("#menu").classList.contains("hidden");
+    let erskjult = document.querySelector(".menu").classList.contains("hidden");
 
     if (erskjult == true) {
 
