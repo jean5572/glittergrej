@@ -29,60 +29,51 @@
     <!-- HEADER MED LOGO OG NAVIGATION -->
 
     <header>
-
-        <div class="nav-mobil">
-
-            <div id="menuknap">☰</div>
-            <div id="mobil-cart">
-                <img src="img/ikoner/shopping-cart-icon.png" alt="kurv ikon">
+        <nav>
+            <div id="header-ikoner">
+                <img id="shopping-cart-mobile" src="img/ikoner/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
+                <div id="menuknap">☰</div>
             </div>
-            <div id="logo">
-                <a href="index.html">
-                    <img src="img/logo/glittergrej-logo.png" alt="logo">
-                </a>
-            </div>
-        </div>
-        <div class="navbar">
-            <div id="logo" class="desktop">
-                <a href="index.html"> <img src="img/logo/glittergrej-logo.png" alt="logo"></a>
-            </div>
-
-            <div id="nav-content" class="menu hidden">
-                <a href="index.html">Forside</a>
-                <a href="shop-trial.html">Shop</a>
-
-                <div class="dropdown">
-                    <form class="dropbtn" action="om-glittergrej.html">
-                        <input type="submit" value="Om Glittergrej" />
-                    </form>
-                    <div class="dropdown-content">
-                        <a href="events.html">Events</a>
-                        <a href="forhandlere.html">Forhandlere</a>
-                    </div>
-                </div>
-                <a href="kontakt.html">Kontakt</a>
-            </div>
-            <div id="search-cart-container">
-                <div id="searchbar">
-                    <input type="text" placeholder="Søg..." name="search">
-                </div>
-                <div id="searchbar-ikon">
-                    <img src="img/ikoner/searchbar-icon.png" alt="Søgebar ikon">
-                </div>
-                <div id="cart">
-                    <img src="img/ikoner/shopping-cart-icon.png" alt="kurv ikon">
+            <div class="menu-container">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="img/logo/glittergrej-logo.png" alt="Glittergrej logo" class="glitter-logo">
+                    </a>
                 </div>
             </div>
-            <div id="social-media-container">
-                <div class="social-media">
-                    <img src="img/ikoner/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
 
-                    <img src="img/ikoner/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
-                </div>
-            </div>
-        </div>
+
+            <ul id="menu" class="hidden">
+                <li><a href="index.html">Forside</a></li>
+                <li><a href="shop-trial.html">Shop</a></li>
+                <li><a href="om-glittergrej.html">Om Glittergrej</a>
+                    <ul class="dropdown">
+                        <li><a href="events.html">- Events</a></li>
+                        <li><a href="forhandlere.html">- Forhandlere</a></li>
+                    </ul>
+                </li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+
+                <ul id="searchbar">
+                    <li>
+                        <input type="text" placeholder="Søg..." name="search" class="search-input">
+                    </li>
+                    <li class="ikoner-flex">
+                        <img src="img/ikoner/searchbar-icon.png" alt="Søgebar ikon">
+                        <img src="img/ikoner/shopping-cart-icon.png" alt="shoppingcart" class="shopping-cart-desktop">
+                    </li>
+                </ul>
+
+                <ul id="social-media-container">
+                    <li class="social-media">
+                        <img src="img/ikoner/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
+
+                        <img src="img/ikoner/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
+                    </li>
+                </ul>
+            </ul>
+        </nav>
     </header>
-
     <img class="video-splash-pil enter_arrow" src="img/arrow-down.png" alt="Glittergrej forside pil">
 
     <!-- SECTION FORSIDE -->

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #1b709f;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        border: none;
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-active {
+        transform: translateX(0);
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+</style>
+
+<body>
+    <!--  NAVIGATION  -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo/glittergrej-logo.png" alt="glittergrej">
+                </a>
+
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#">FORSIDE</a>
+                </li>
+                <li>
+                    <a href="#">SHOP</a>
+                </li>
+                <li>
+                    <a href="#">OM GLITTERGREJ</a>
+                </li>
+                <li>
+                    <a href="#">EVENTS</a>
+                </li>
+                <li>
+                    <a href="#">FORHANDLERE</a>
+                </li>
+                <li>
+                    <a href="#">KONTAKT</a>
+                </li>
+                <li>
+                    <input type="text" placeholder="Søg..." name="search">
+                    <img src="img/ikoner/searchbar-icon.png" alt="">
+                </li>
+                <li>
+                    <img src="img/logo/glittergrej-facebook-icon.png" alt="">
+                    <img src="img/ikoner/glittergrej-instagram-icon.png" alt="">
+                </li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM loaded');
+            navSlide();
+            hentData();
+        });
+
+
+
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            //TOGGLE NAVIGATION
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+
+
+                //ANIMATION LINKS
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = ''
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +0.5}s`;
+                    }
+                });
+                //BURGER ANIMATION
+                burger.classList.toggle('toggle');
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>
