@@ -1,4 +1,6 @@
 /* GENERELT */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -18,22 +20,6 @@ body {
 img {
     width: 100%;
 }
-
-/* FONT */
-/* GOOGLE FONT JOST */
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700&display=swap');
-
-/*** FONT REGULAR ***/
-/*
-font-family: 'Jost',
-sans-serif;
-font-weight: 400;
-
-** FONT LIGHT **
-font-family: 'Jost',
-sans-serif;
-font-weight: 300;
-*/
 
 h1 {
     font-family: 'Jost', sans-serif;
@@ -199,6 +185,7 @@ ul li ul li {
     position: relative;
     float: right;
     color: #FF48AA;
+    margin-top: 15px;
 }
 
 #menu {
@@ -269,7 +256,7 @@ ul li ul li {
 
 #prevBtn {
     position: absolute;
-    top: 35%;
+    top: 50%;
     z-index: 1;
     left: 5%;
     font-size: 50px;
@@ -281,7 +268,7 @@ ul li ul li {
 
 #nextBtn {
     position: absolute;
-    top: 35%;
+    top: 50%;
     z-index: 1;
     right: 5%;
     font-size: 50px;
@@ -717,13 +704,6 @@ input[type=submit] {
     padding-left: 0;
 }
 
-/*
- styling af mouse over input[type=submit]:hover {
-     background-color: #fdfdfd;
-     color: #ff48aa;
- }
-*/
-
 /* FORHANDLERE */
 .forhandlere-main {
     margin: 10px 50px 10px 50px;
@@ -924,7 +904,7 @@ input[type=number] {
     .searchbar {
         margin: 0;
         position: absolute;
-        right: 20px;
+        right: -13em;
         display: flex;
     }
 
@@ -1157,10 +1137,7 @@ input[type=number] {
         left: 0;
         display: none;
         padding: 14px 25px 0 0;
-        background-color: #FTEAF0;
     }
-
-
 
     #shopping-cart-mobile {
         float: right;
