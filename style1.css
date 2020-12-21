@@ -111,6 +111,14 @@ header img {
     width: 10%;
 }
 
+#mobil-cart {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-around;
+    float: right;
+
+}
+
 #cart {
     display: none;
 }
@@ -127,6 +135,10 @@ header img {
     width: 35%;
     padding: 10px;
     height: 100%;
+}
+
+.desktop {
+    display: none;
 }
 
 /***** NAVIGATION *****/
@@ -1170,6 +1182,15 @@ background-color: #FF48AA;*/
 
 @media (min-width: 1100px) {
 
+    /*  Nav mobiler  */
+
+    /*
+    .nav-mobil {
+        display: none;
+    }
+*/
+
+
 
     /* Navbar container */
     .navbar {
@@ -1268,8 +1289,10 @@ background-color: #FF48AA;*/
         display: block;
     }
 
-    #logo {
+    #logo,
+    .desktop {
         width: 11%;
+        display: block;
     }
 
     #nav-content {
