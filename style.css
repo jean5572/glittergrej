@@ -110,7 +110,6 @@ header img {
 }
 
 /***** NAVIGATION *****/
-
 a {
     text-decoration: none;
 }
@@ -665,6 +664,18 @@ footer a:hover {
     flex-grow: 1;
 }
 
+.send-knap {
+    background-color: #FF48AA;
+    color: #FCEAF0;
+    font-size: 1em;
+    letter-spacing: 1px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 /* styling af containeren */
 .container-formular {
     border-radius: 5px;
@@ -692,6 +703,7 @@ footer a:hover {
 }
 
 /* styling af knap */
+/*
 input[type=submit] {
     background-color: inherit;
     color: #FF48AA;
@@ -703,6 +715,7 @@ input[type=submit] {
     text-transform: uppercase;
     padding-left: 0;
 }
+*/
 
 /* FORHANDLERE */
 .forhandlere-main {
