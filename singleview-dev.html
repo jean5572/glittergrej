@@ -26,41 +26,45 @@
     <!-- HEADER MED LOGO OG NAVIGATION -->
     <header>
         <nav>
-            <div id="header-ikoner"><img id="shopping-cart" src="img/ikoner/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
+            <div id="header-ikoner">
+                <img id="shopping-cart-mobile" src="img/ikoner/shopping-cart-icon.png" alt="Glittergrej shopping cart ikon">
                 <div id="menuknap">☰</div>
             </div>
             <div class="menu-container">
-                <div id="logo"><a href="index.html"><img src="img/logo/glittergrej-logo.png" alt="Glittergrej logo">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="img/logo/glittergrej-logo.png" alt="Glittergrej logo" class="glitter-logo">
                     </a>
                 </div>
             </div>
 
+
             <ul id="menu" class="hidden">
                 <li><a href="index.html">Forside</a></li>
                 <li><a href="shop-trial.html">Shop</a></li>
-
-                <div class="dropdown">
-                    <li><a href="om-glittergrej.html">Om Glittergrej</a></li>
-                    <div class="dropdown-content">
-                        <a href="events.html">Events</a>
-                        <a href="forhandlere.html">Forhandlere</a>
-                    </div>
-                </div>
-
+                <li><a href="om-glittergrej.html">Om Glittergrej</a>
+                    <ul class="dropdown">
+                        <li><a href="events.html">- Events</a></li>
+                        <li><a href="forhandlere.html">- Forhandlere</a></li>
+                    </ul>
+                </li>
                 <li><a href="kontakt.html">Kontakt</a></li>
 
-                <div id="searchbar">
-                    <input type="text" placeholder="Søg..." name="search">
+
+                <li class="searchbar">
+                    <input type="text" placeholder="Søg..." name="search" class="search-input">
                     <img src="img/ikoner/searchbar-icon.png" alt="Søgebar ikon">
-                </div>
+                    <img src="img/ikoner/shopping-cart-icon.png" alt="shoppingcart" class="shopping-cart-desktop">
+                </li>
 
-                <div id="social-media-container">
-                    <div class="social-media">
-                        <img src="img/ikoner/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
 
-                        <img src="img/ikoner/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
-                    </div>
-                </div>
+
+                <li class="social-media social-media-container">
+                    <img src="img/ikoner/glittergrej-facebook-icon.png" alt="Glittergrej Facebook ikon">
+
+                    <img src="img/ikoner/glittergrej-instagram-icon.png" alt="Glittergrej Instagram ikon">
+                </li>
+
             </ul>
         </nav>
     </header>

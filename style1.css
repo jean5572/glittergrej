@@ -2,6 +2,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+
 }
 
 html {
@@ -11,6 +12,7 @@ html {
 body {
     font-family: 'Jost', sans-serif;
     background-color: #FDFDFD;
+    overflow-x: hidden;
 }
 
 img {
@@ -85,6 +87,7 @@ a:hover {
 
 /***** HEADER *****/
 header {
+    height: 120px;
     background-color: #FCEAF0;
 }
 
@@ -93,41 +96,24 @@ header img {
     vertical-align: middle;
 }
 
-#search-cart-container {
+#header-ikoner {
     display: flex;
-    /*    float: right;*/
+    float: right;
     justify-content: right;
     margin-right: 30px;
-    cursor: pointer;
-    margin-bottom: 50px;
-}
-
-#searchbar {
-    margin-right: 90px;
-    margin-left: 30px;
-}
-
-#searchbar-ikon img {
-    width: 10%;
-}
-
-#mobil-cart {
-    margin-top: 4vh;
-    display: flex;
-    justify-content: space-around;
-    float: right;
-
-}
-
-#cart {
-    display: none;
+    height: 120px;
 }
 
 /*** SHOPPING CART IKON ***/
-#shopping-cart {
+#shopping-cart-mobile {
+    display: block;
     float: right;
     width: 100%;
     margin-top: 15px;
+}
+
+.shopping-cart-desktop {
+    display: none;
 }
 
 /**** LOGO *****/
@@ -137,52 +123,65 @@ header img {
     height: 100%;
 }
 
-.desktop {
-    display: none;
-}
-
 /***** NAVIGATION *****/
-.navbar {
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-    z-index: 1;
-    top: 0;
+
+a {
+    text-decoration: none;
 }
 
-#nav-content {
-    text-align: left;
-    padding: 0px;
-    z-index: 2;
-    position: relative;
-    display: inline;
-    text-align: left;
+ul {
+    list-style: none;
+    display: table-caption;
 }
 
-/*
-#nav-content li {
-    display: inline;
-    text-align: left;
-}
-*/
-
-#nav-content a,
-.dropbtn {
+li {
     display: block;
-    color: black;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
     padding: 14px 30px;
     text-decoration: none;
-    font-family: 'Jost',
-        sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1em;
+    font-size: 2em;
     color: #FF48AA;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: 0.1em;
     background-color: #FCEAF0;
-    border: none;
+}
+
+.dropdown {
+    font-size: 0.5em;
+    width: 100vw;
+}
+
+nav ul {
+    text-align: left;
+    padding: 0px;
+    z-index: 1;
+    position: relative;
+}
+
+nav li {
+    /*    display: inline;*/
+    text-align: left;
+}
+
+li a {
+    display: block;
+    color: #FF48AA;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+ul li ul li {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .hidden {
@@ -193,56 +192,60 @@ header img {
 #menuknap {
     display: inline-block;
     position: fixed;
-    font-family: 'Jost',
-        sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: 400;
-    font-size: 5em;
-    /*    z-index: 1;*/
+    font-size: 4em;
+    z-index: 1;
     position: relative;
     float: right;
     color: #FF48AA;
 }
 
-.menu {
-    list-style-type: none;
-    height: 200vh;
+#menu {
+    /*    list-style-type: none;**/
+    width: 100vw;
     background-color: #FCEAF0;
+    padding-top: 50px;
+    z-index: 2;
 }
 
 .menu-container {
     display: flex;
-    align-items: center
+    align-items: center;
+    height: 120px;
 }
+
 
 /*** SØGEBAR ***/
-/*
-#searchbar {
-    width: 100%;
+.searchbar {
     margin: 50px 30px 30px 30px;
 }
-*/
 
-#searchbar input {
+.searchbar li {
+    padding: 0;
+}
+
+.searchbar input {
     color: #CCCCCC;
     padding: 10px;
-    width: 200%;
     border-radius: 10px;
     border: none;
 }
 
-#searchbar img {
-    width: 8%;
+.searchbar img {
+    width: 15%;
 }
 
+
+
 /*** SOCIALE MEDIER IKONER ***/
-#social-media-container {
+.social-media-container {
     display: flex;
-    margin-bottom: 50px;
 }
 
 .social-media img {
-    width: 12%;
-    margin-left: 80px;
+    width: 15%;
+    margin: 20px;
 }
 
 #video-splash {
@@ -377,25 +380,9 @@ header img {
     font-size: 1.25em;
 }
 
-.dropdown-content a {
-    display: block;
-    color: black;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.25em;
-    color: #FF48AA;
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 0.1em;
-    background-color: #FCEAF0;
-
-}
 
 .glitter-logo {
-    height: 10vh;
+    height: 100%;
 }
 
 /* GLITTER PAA MOBIL */
@@ -699,16 +686,17 @@ footer a:hover {
 }
 
 .konktakt-form {
-    width: 90%;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    margin: 6px 20px 16px 20px;
     resize: vertical;
     font-family: 'Jost', sans-serif;
     letter-spacing: 1px;
     color: #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #fdfdfd;
 }
 
@@ -904,146 +892,52 @@ input[type=number] {
 
 
 /* MEDIA QUERY DESKTOP */
-@media (min-width: 600px) {
-
-    /* Navbar container */
-    .navbar {
-        overflow: hidden;
-        background-color: #fceaf0;
-        font-family: 'Jost', sans-serif;
-    }
-
-
-
-    /* Links inside the navbar */
-    .navbar a {
-        float: left;
-        font-size: 1.25em;
-        color: #FF48AA;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-
+@media (min-width: 1100px) {
 
     /* The dropdown container */
     .dropdown {
+        display: grid;
+        grid-template-columns: 200px;
+        width: 300px;
+    }
+
+    .dropdown li {
         float: left;
         overflow: hidden;
+
     }
-
-
-
-    /* Dropdown button */
-    .dropdown .dropbtn {
-        font-size: 1.25em;
-        border: none;
-        outline: none;
-        color: #FF48AA;
-        padding: 14px 16px;
-        background-color: inherit;
-        text-transform: uppercase;
-        font-family: inherit;
-        /* Important for vertical align on mobile phones */
-        margin: 0;
-        /* Important for vertical align on mobile phones */
-    }
-
-
 
     /* Add a red background color to navbar links on hover */
-    .navbar a:hover,
-    .dropdown:hover .dropbtn {
-        /*
-background-color: #FF48AA;*/
+    .dropdown:hover {
         color: #FF48AA;
         text-decoration: underline;
-    }
-
-
-
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #fceaf0;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        float: none;
-        color: #FF48AA;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-
-
-    /* Add a grey background color to dropdown links on hover */
-    .dropdown-content a:hover {
-        background-color: #FF48AA;
-        color: #fceaf0;
-        text-decoration: none;
-    }
-
-
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
     }
 
     #logo {
         width: 8%;
     }
 
-    #nav-content {
-        margin-top: 30px;
-    }
-
-    #search-cart-container {
+    .searchbar {
+        margin: 0;
+        position: absolute;
+        right: 20px;
         display: flex;
     }
 
-    #searchbar {
-        width: 50%;
-        margin-right: -130px;
+    .searchbar img {
+        width: 5%;
     }
 
-    #searchbar input {
+    .searchbar input {
+        height: fit-content;
         color: #CCCCCC;
         padding: 10px;
         border-radius: 10px;
         border: none;
     }
 
-    #searchbar-ikon {
-        width: 3%;
-    }
-
-    #cart {
-        width: 3%;
-    }
-
-    #search-cart-container {
-        margin-top: 43px;
-    }
-
-
-
-
 
     /* GLITTER PAA DESKTOP */
-
     #glitter-paa {
         display: flex;
         margin-top: 50px;
@@ -1178,153 +1072,8 @@ background-color: #FF48AA;*/
         margin-top: 0px;
     }
 
-}
-
-@media (min-width: 1100px) {
-
-    /*  Nav mobiler  */
-
-    /*
-    .nav-mobil {
-        display: none;
-    }
-*/
-
-
-
-    /* Navbar container */
-    .navbar {
-        overflow: hidden;
-        background-color: #fceaf0;
-        font-family: 'Jost', sans-serif;
-
-    }
-
-
-
-    /* Links inside the navbar */
-    .navbar a {
-        float: left;
-        font-size: 1.25em;
-        color: #FF48AA;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-
-
-    /* The dropdown container */
-    .dropdown {
-        float: left;
-        overflow: hidden;
-    }
-
-
-
-    /* Dropdown button */
-    .dropdown .dropbtn {
-        font-size: 1.25em;
-        border: none;
-        outline: none;
-        color: #FF48AA;
-        padding: 14px 16px;
-        background-color: inherit;
-        text-transform: uppercase;
-        font-family: inherit;
-        /* Important for vertical align on mobile phones */
-        margin: 0;
-        /* Important for vertical align on mobile phones */
-    }
-
-
-
-    /* Add a red background color to navbar links on hover */
-    .navbar a:hover,
-    .dropdown:hover .dropbtn {
-        /*
-background-color: #FF48AA;*/
-        color: #FF48AA;
-        text-decoration: underline;
-    }
-
-
-
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #fceaf0;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        float: none;
-        color: #FF48AA;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-
-
-    /* Add a grey background color to dropdown links on hover */
-    .dropdown-content a:hover {
-        background-color: #FF48AA;
-        color: #fceaf0;
-        text-decoration: none;
-    }
-
-
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    #logo,
-    .desktop {
-        width: 11%;
-        display: block;
-    }
-
-    #nav-content {
-        margin-top: 20px;
-    }
-
-    #search-cart-container {
-        display: flex;
-    }
-
-    #searchbar input {
-        color: #CCCCCC;
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-    }
-
-    #searchbar-ikon {
-        width: 3%;
-    }
-
-    #cart {
-        width: 3%;
-    }
-
-    #search-cart-container {
-        margin-top: 30px;
-        /*        justify-content: center;*/
-    }
 
     /* HEADER */
-    /*
     header {
         height: 180px;
     }
@@ -1332,20 +1081,16 @@ background-color: #FF48AA;*/
     nav {
         height: 100%;
     }
-*/
 
     .video-splash-pil {
         display: inline-block;
     }
 
-    /*
     .menu-container {
         height: 100%
     }
-*/
 
     /* MENU */
-    /*
     #logo {
         width: 12%;
         padding: 10px;
@@ -1353,24 +1098,29 @@ background-color: #FF48AA;*/
         margin: 0;
     }
 
-    .glitter-logo {
-        height: 100%;
-    }
-*/
-
-    #social-media-container {
+    #shopping-cart-mobile {
         display: none;
     }
 
-    /*
+    .glitter-logo {
+        height: 100%;
+    }
+
+    .social-media-container {
+        display: none;
+    }
+
+    .shopping-cart-desktop {
+        display: block;
+    }
+
     #menu {
         height: 0;
         position: absolute;
         top: 15px;
         left: 220px;
         background-color: transparent;
-        margin: 0;
-        padding-top: 50px;
+        font-size: 0.5em;
     }
 
     #menuknap {
@@ -1382,79 +1132,50 @@ background-color: #FF48AA;*/
         transform: translateX(0);
     }
 
-    #menu li {
-        display: inline-block;
-    }
-
-    #menu li a {
-        font-size: 1.25em;
+    li {
+        float: left;
     }
 
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
+    ul li:hover > ul,
+    ul li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
     }
 
-    .dropdown-content {
-        display: none;
+    ul li ul {
+        visibility: hidden;
+        opacity: 0;
+        min-width: 5rem;
         position: absolute;
-        background-color: #FCEAF0;
-        min-width: 150px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        margin-left: 30px;
+        transition: all 0.5s ease;
+        left: 0;
+        display: none;
+        padding: 14px 25px 0 0;
+        background-color: #FTEAF0;
     }
 
-    .dropdown-content a {
-        color: #FF48AA;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        font-family: 'Jost', sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.25em;
-        text-transform: uppercase;
-        text-align: left;
-        letter-spacing: 0.1em;
-        background-color: #FCEAF0;
 
-    }
 
-    .dropdown-content a:hover {
-        background-color: #FF48AA;
-        color: #FCEAF0;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover {
-        background-color: #FF48AA;
-        color: #FCEAF0;
-    }
-
-    #searchbar {
-        width: 20%;
-        float: right;
-        margin-right: -150px;
-        margin-top: 15px;
-    }
-
-    #searchbar img {
-        width: 13%;
-    }
-
-    #shopping-cart {
+    #shopping-cart-mobile {
         float: right;
         width: 40%;
         margin-top: 75px;
         z-index: 1000;
         margin-right: 60px;
     }
-*/
+
+    #forside {
+        display: none;
+    }
+
+
+    .ikoner-flex {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
 
     #forside {
         display: none;
@@ -1541,16 +1262,4 @@ background-color: #FF48AA;*/
         display: none;
     }
 
-}
-
-@media (max-width: 1300px) {
-    /*
-    .dropdown-content a {
-        font-size: 0.9em;
-    }
-
-    #menu li a {
-        font-size: 0.9em;
-    }
-*/
 }
